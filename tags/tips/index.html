@@ -1,0 +1,1591 @@
+<!DOCTYPE html>
+<html  lang="en">
+<head>
+    <meta charset="utf-8" />
+
+<meta name="generator" content="Hexo 4.0.0" />
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+
+<title>Tag: tips - Tanjim Hossain</title>
+
+
+
+
+
+
+
+
+<link rel="icon" href="/images/favicon.svg">
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.7.2/css/bulma.css">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Ubuntu:400,600|Source+Code+Pro">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@9.12.0/styles/atom-one-light.css">
+
+
+    
+    
+<style>body>.footer,body>.navbar,body>.section{opacity:0}</style>
+
+    
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@1.6.8/dist/css/lightgallery.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/css/justifiedGallery.min.css">
+
+    
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/outdatedbrowser@1.1.5/outdatedbrowser/outdatedbrowser.min.css">
+
+    
+    
+    
+    
+<link rel="stylesheet" href="/css/back-to-top.css">
+
+    
+    
+    
+    
+    
+    
+    
+    <link rel="stylesheet" href="/css/progressbar.css">
+<script src="https://cdn.jsdelivr.net/npm/pace-js@1.0.2/pace.min.js"></script>
+    
+    
+    
+
+
+<link rel="stylesheet" href="/css/style.css">
+</head>
+<body class="is-3-column">
+    <nav class="navbar navbar-main">
+    <div class="container">
+        <div class="navbar-brand is-flex-center">
+            <a class="navbar-item navbar-logo" href="/">
+            
+                <img src="/images/logo.svg" alt="Tanjim Hossain" height="28">
+            
+            </a>
+        </div>
+        <div class="navbar-menu">
+            
+            <div class="navbar-start">
+                
+                <a class="navbar-item"
+                href="/">Home</a>
+                
+                <a class="navbar-item"
+                href="/archives">Archives</a>
+                
+                <a class="navbar-item"
+                href="/categories">Categories</a>
+                
+                <a class="navbar-item"
+                href="/tags">Tags</a>
+                
+            </div>
+            
+            <div class="navbar-end">
+                
+                    
+                    <a class="navbar-item" target="_blank" rel="noopener" title="Github @audacioustux" href="https://github.com/audacioustux">
+                        
+                        <i class="fab fa-github"></i>
+                        
+                    </a>
+                    
+                
+                
+                
+                <a class="navbar-item search" title="Search" href="javascript:;">
+                    <i class="fas fa-search"></i>
+                </a>
+                
+            </div>
+        </div>
+    </div>
+</nav>
+    
+    <section class="section">
+        <div class="container">
+            <div class="columns">
+                <div class="column is-8-tablet is-8-desktop is-6-widescreen has-order-2 column-main"><div class="card">
+    <div class="card-content">
+        <nav class="breadcrumb" aria-label="breadcrumbs">
+        <ul>
+            <li><a href="/tags">Tags</a></li>
+            <li class="is-active"><a href="#" aria-current="page">tips</a></li>
+        </ul>
+        </nav>
+    </div>
+</div>
+
+    
+<div class="card">
+    
+    <div class="card-image">
+        <a href="/2020/02/12/library-less-node-config-secrets-management/" class="image is-7by1">
+            <img class="thumbnail" src="/img/Screenshot_20200212_024945.png" alt="library-less node config &amp; secrets management">
+        </a>
+    </div>
+    
+    <div class="card-content article ">
+        
+        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
+            <div class="level-left">
+                <time class="level-item has-text-grey" datetime="2020-02-12T02:27:53.000Z">2020-02-12</time>
+                
+                <div class="level-item">
+                <a class="has-link-grey -link" href="/categories/nodeJS/">nodeJS</a>&nbsp;/&nbsp;<a class="has-link-grey -link" href="/categories/nodeJS/typescript/">typescript</a>
+                </div>
+                
+                
+                <span class="level-item has-text-grey">
+                    
+                    
+                    2 minutes read (About 349 words)
+                </span>
+                
+                
+            </div>
+        </div>
+        
+        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
+            
+                <a class="has-link-black-ter" href="/2020/02/12/library-less-node-config-secrets-management/">library-less node config &amp; secrets management</a>
+            
+        </h1>
+        <div class="content">
+            <h3 id="use-bash-script-instead-of-dotenv-dependency"><a href="#use-bash-script-instead-of-dotenv-dependency" class="headerlink" title="use bash script; instead of dotenv dependency"></a>use bash script; instead of <code>dotenv</code> dependency</h3><p>make ./bin/export.sh with:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#!/usr/bin/env bash</span></span><br><span class="line"></span><br><span class="line">DOT_ENV=<span class="string">"<span class="variable">$1</span>"</span></span><br><span class="line">EXEC=<span class="variable">$&#123;@:2&#125;</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">set</span> -a</span><br><span class="line"><span class="built_in">source</span> <span class="variable">$DOT_ENV</span></span><br><span class="line"><span class="built_in">set</span> +a</span><br><span class="line"></span><br><span class="line"><span class="variable">$EXEC</span></span><br></pre></td></tr></table></figure>
+<p>now to use this with nodemon:</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="attr">"delay"</span>: <span class="number">0</span>,</span><br><span class="line">  <span class="attr">"verbose"</span>: <span class="literal">true</span>,</span><br><span class="line">  <span class="attr">"watch"</span>: [</span><br><span class="line">    <span class="string">"src"</span></span><br><span class="line">  ],</span><br><span class="line">  <span class="attr">"ignore"</span>: [</span><br><span class="line">    <span class="string">"**/*.spec.ts"</span>,</span><br><span class="line">    <span class="string">"**/*.test.ts"</span>,</span><br><span class="line">    <span class="string">".git"</span>,</span><br><span class="line">    <span class="string">"**/node_modules"</span></span><br><span class="line">  ],</span><br><span class="line">  <span class="attr">"env"</span>: &#123;</span><br><span class="line">    <span class="attr">"nodemon"</span>: <span class="number">1</span>,</span><br><span class="line">    <span class="attr">"DEBUG"</span>: <span class="string">"*"</span></span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="attr">"exec"</span>: <span class="string">"npm run build &amp;&amp; ./bin/export.sh .env npm start"</span>,</span><br><span class="line">  <span class="attr">"ext"</span>: <span class="string">"js,json,ts"</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>ignore other attributes. see how <code>./bin/export.sh .env</code> is used in exec value.</p>
+<p>but,</p>
+<ul>
+<li>don’t forget to <code>chmod +x ./bin/export.sh</code></li>
+<li>this only works on linux (&amp; probably on mac)</li>
+<li>not recommended for use with docker. you would use docker/k8s secrets or other methods anyway <code>¯\(ツ)/¯</code></li>
+</ul>
+<h3 id="use-centralized-config-file-instead-of-node-config-dependency"><a href="#use-centralized-config-file-instead-of-node-config-dependency" class="headerlink" title="use centralized config file; instead of node-config dependency"></a>use centralized config file; instead of node-config dependency</h3><figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> crypto <span class="keyword">from</span> <span class="string">'crypto'</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> &#123; NODE_ENV = <span class="string">'production'</span> &#125; = process.env;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> isDev = NODE_ENV === <span class="string">'development'</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// safe for all environment</span></span><br><span class="line"><span class="keyword">const</span> safeDefs: NodeJS.ProcessEnv = &#123;</span><br><span class="line">    PORT: <span class="string">'4000'</span>,</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">// safe defaults for production environment</span></span><br><span class="line"><span class="keyword">const</span> prodDefs: NodeJS.ProcessEnv = &#123; ...safeDefs &#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">// safe defaults for development environment</span></span><br><span class="line"><span class="keyword">const</span> devDefs: NodeJS.ProcessEnv = &#123;</span><br><span class="line">    ...safeDefs,</span><br><span class="line">    REDIS_CONNECTION_STRING: <span class="string">'redis://redis'</span>,</span><br><span class="line">    PG_CONNECTION_STRING: <span class="string">'postgres://postgres:password@postgres/nobinalo'</span>,</span><br><span class="line">    ES_NODE: <span class="string">'http://elasticsearch:9200'</span>,</span><br><span class="line">    EMAIL_VERIFICATION_SECRET: crypto.randomBytes(<span class="number">48</span>).toString(<span class="string">'base64'</span>),</span><br><span class="line">    PHONE_NO_VERIFICATION_SECRET: crypto.randomBytes(<span class="number">48</span>).toString(<span class="string">'base64'</span>),</span><br><span class="line">    AUTH_JWT_SECRET: crypto.randomBytes(<span class="number">33</span>).toString(<span class="string">'base64'</span>),</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> env = <span class="keyword">new</span> Proxy(process.env, &#123;</span><br><span class="line">    <span class="keyword">get</span>: (env, key: <span class="built_in">string</span>): <span class="function"><span class="params">string</span> =&gt;</span> &#123;</span><br><span class="line">        <span class="keyword">const</span> value = env[key];</span><br><span class="line">        <span class="keyword">const</span> devValue = devDefs[key];</span><br><span class="line">        <span class="keyword">const</span> prodValue = prodDefs[key];</span><br><span class="line">        <span class="keyword">if</span> (value) <span class="keyword">return</span> value;</span><br><span class="line">        <span class="keyword">if</span> (isDev &amp;&amp; devValue) <span class="keyword">return</span> devValue;</span><br><span class="line">        <span class="keyword">if</span> (!isDev &amp;&amp; prodValue) <span class="keyword">return</span> prodValue;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">throw</span> <span class="keyword">new</span> <span class="built_in">Error</span>(<span class="string">`Environment Variable '<span class="subst">$&#123;key&#125;</span>' is missing!`</span>);</span><br><span class="line">    &#125;,</span><br><span class="line">&#125;) <span class="keyword">as</span> Record&lt;<span class="built_in">string</span>, <span class="built_in">string</span>&gt;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> &#123;</span><br><span class="line">    PG_CONNECTION_STRING,</span><br><span class="line">    REDIS_CONNECTION_STRING,</span><br><span class="line">    SENDGRID_API_KEY,</span><br><span class="line">    PORT,</span><br><span class="line">    EMAIL_VERIFICATION_SECRET,</span><br><span class="line">    PHONE_NO_VERIFICATION_SECRET,</span><br><span class="line">    AUTH_JWT_SECRET,</span><br><span class="line">    ES_NODE,</span><br><span class="line">&#125; = env;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> config = &#123;</span><br><span class="line">    isDev,</span><br><span class="line">    NODE_ENV,</span><br><span class="line">    SECRETS: &#123;</span><br><span class="line">        EMAIL_VERIFICATION_SECRET,</span><br><span class="line">        PHONE_NO_VERIFICATION_SECRET,</span><br><span class="line">        AUTH_JWT_SECRET,</span><br><span class="line">    &#125;,</span><br><span class="line">    PORT,</span><br><span class="line">    knex: &#123;</span><br><span class="line">        connection: PG_CONNECTION_STRING,</span><br><span class="line">    &#125;,</span><br><span class="line">    redis: &#123; REDIS_CONNECTION_STRING &#125;,</span><br><span class="line">    elasticsearch: &#123;</span><br><span class="line">        node: ES_NODE,</span><br><span class="line">    &#125;,</span><br><span class="line">    sendgrid: &#123;</span><br><span class="line">        SENDGRID_API_KEY,</span><br><span class="line">    &#125;,</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> config;</span><br></pre></td></tr></table></figure>
+<p>usage:</p>
+<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> config <span class="keyword">from</span> <span class="string">'../config'</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> &#123;</span><br><span class="line">    redis: &#123; REDIS_CONNECTION_STRING &#125;,</span><br><span class="line">&#125; = config;</span><br></pre></td></tr></table></figure>
+<p>this will,</p>
+<ul>
+<li>fail in production mode</li>
+<li>use ‘redis://redis’ in development mode</li>
+</ul>
+<p>if <code>REDIS_CONNECTION_STRING</code> env variable is not set. </p>
+
+        </div>
+        
+        
+        
+    </div>
+</div>
+
+
+
+
+
+
+
+
+    
+<div class="card">
+    
+    <div class="card-image">
+        <a href="/2019/12/30/swap-zram-zswap-random-linux-stuffs/" class="image is-7by1">
+            <img class="thumbnail" src="https://raw.githubusercontent.com/audacioustux/paste/master/Screenshot_20200204_013440.png" alt="swap, zram, zswap, random linux stuffs">
+        </a>
+    </div>
+    
+    <div class="card-content article ">
+        
+        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
+            <div class="level-left">
+                <time class="level-item has-text-grey" datetime="2019-12-30T10:29:56.000Z">2019-12-30</time>
+                
+                <div class="level-item">
+                <a class="has-link-grey -link" href="/categories/linux/">linux</a>
+                </div>
+                
+                
+                <span class="level-item has-text-grey">
+                    
+                    
+                    7 minutes read (About 1114 words)
+                </span>
+                
+                
+            </div>
+        </div>
+        
+        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
+            
+                <a class="has-link-black-ter" href="/2019/12/30/swap-zram-zswap-random-linux-stuffs/">swap, zram, zswap, random linux stuffs</a>
+            
+        </h1>
+        <div class="content">
+            <h4 id="context-Linux-Bangladesh-facebook-group"><a href="#context-Linux-Bangladesh-facebook-group" class="headerlink" title="context: Linux Bangladesh facebook group"></a><strong>context</strong>: <code>Linux Bangladesh</code> facebook group</h4><hr>
+<ol>
+<li><h4 id="swap-swapfile-zswap-zram"><a href="#swap-swapfile-zswap-zram" class="headerlink" title="swap, swapfile, zswap, zram"></a><strong>swap, swapfile, zswap, zram</strong></h4>র‍্যাম যতই হোক, almost-always-add-swap-space - <a href="https://haydenjames.io/linux-performance-almost-always-add-swap-space/">https://haydenjames.io/linux-performance-almost-always-add-swap-space/</a></li>
+</ol>
+<h5 id="কিন্তু-কত-GB"><a href="#কিন্তু-কত-GB" class="headerlink" title="কিন্তু কত GB?"></a><strong>কিন্তু কত GB?</strong></h5><ul>
+<li>hibernate (suspend on disk) ফিচার চাইলে র‍্যামের সাইজ + ১ জিবি</li>
+<li>যদি হাইবারনেট করার চিন্তা ভাবনা না থাকে:<ul>
+<li>hdd হইলে: দরকার নাই (পরে কাহিনী খুলে বলতেছি)</li>
+<li>ssd হইলে: 1 GB</li>
+</ul>
+</li>
+</ul>
+<h5 id="ক্যামনে-বানাবো"><a href="#ক্যামনে-বানাবো" class="headerlink" title="ক্যামনে বানাবো?"></a><strong>ক্যামনে বানাবো?</strong></h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$ sudo su</span><br><span class="line">$ dd if=/dev/zero of=/swapfile1 bs=1G count=&lt;swap_size&gt;</span><br><span class="line">$ chown root:root /swapfile1; chmod 0600 /swapfile1</span><br><span class="line">$ mkswap /swapfile1; swapon /swapfile1</span><br><span class="line">$ echo &quot;/swapfile1 none swap sw 0 0&quot; &gt;&gt; /etc/fstab</span><br></pre></td></tr></table></figure>
+<p>explanation: 1) switch to root user, 2) হিউজ একখান ফাইল, যাতে কোনো হোল নাই -_- replace <code>&lt;swap_size&gt;</code> with যত জিবি সোয়াপ চান (ex: 1,2,3…) 3) set permission for the file 4) file টাকে সোয়াপ হিসাবে ব্যবহার উপযোগী করার জন্যে 5) swapfile টা প্রতি স্টার্টাপে অটোম্যাটিকালি সোয়াপ হিসাবে মাউন্ট করার জন্যে…</p>
+<h5 id="zswap-zram-কিতা"><a href="#zswap-zram-কিতা" class="headerlink" title="zswap, zram কিতা?"></a>zswap, zram কিতা?</h5><p>সোয়াপ আসলে কি হয়? </p>
+<pre><code>&quot;memory pages which are hardly ever used&quot; </code></pre><p>তো সেই মেমোরি swapfile এ না রেখে মেমোরীতেই কম্প্রেস কইরা রাখলেই তো হয় 🤔 সুবিধা? hdd/ssd র‍্যামের থেকে অনেকটা স্লো। হার্ডলি এভার ইউজ্ড মানেতো এই না যে কখনোই ব্যবহার হবেনা? আর যদি র‍্যাম অনেকটা ব্যবহার হয়ে যায়, তখন যাস্ট কিছুটা কম ব্যবহার হইতেছে এমন মেমোরীও সোয়াপ হয়ে যাইতে পারে। কম্প্রেস করে র‍্যামেই রেখে দিলে ram এর একটা অংশ সোয়াপ স্টোরেজের মত কাজ করতেছে 😌 zswap, zram এর কাহিনী ইহাই :)<br>zswap কম্প্রেস করে মেমোরিতেই রাখতেছে, কিন্তু যখন মেমোরিও ফুল হয়ে যাওয়া শুরু করবে, মেমোরিতে কম্প্রেস হওয়া ডাটা আসল সোয়াপ স্টোরেজে মুভ করা শুরু করবে…<br>zram এর ক্ষেত্রে মুভের কোনো কাহিনী নাই :) বাকিসব zswap এর মতই। তো zram এর সাথে swapfile/partition রেখে লাভ নাই।</p>
+<h5 id="তো-কখন-কোনটা-zram-or-zwap"><a href="#তো-কখন-কোনটা-zram-or-zwap" class="headerlink" title="তো কখন কোনটা? zram or zwap?"></a><strong>তো কখন কোনটা? zram or zwap?</strong></h5><p>hdd হইলে যাস্ট zram. ssd হইলে zswap 👌<br>এর জন্যেই একেবারে প্রথমে বলছিলাম hdd তে swap এর দরকার নাই।</p>
+<h5 id="কিন্তু-ক্যামনে"><a href="#কিন্তু-ক্যামনে" class="headerlink" title="কিন্তু ক্যামনে?"></a><strong>কিন্তু ক্যামনে?</strong></h5><p>একেক ডিস্ট্রোতে একেকভাবে zram, zwap enable করে। manjaro, pop_os এই দুইটার টা কমেন্টে দিতেছি</p>
+<ol start="2">
+<li><h4 id="personal-preference"><a href="#personal-preference" class="headerlink" title="personal preference:"></a><strong>personal preference:</strong></h4></li>
+</ol>
+<p><strong>distro</strong>: manjaro kde<br><strong>package manager</strong>: snap -&gt; flatpak -&gt; pacman -&gt; yay<br><strong>terminal emulator</strong>: অনেক অনেক ঘুরাঘুরির পর kitty ( <a href="https://github.com/kovidgoyal/kitty">https://github.com/kovidgoyal/kitty</a> ) তে শান্তি পাইলাম.<br><strong>config</strong>: <a href="https://gist.github.com/audacioustux/4967b2c6d25a004c394455a95f676508">https://gist.github.com/audacioustux/4967b2c6d25a004c394455a95f676508</a> (follow the README file)<br><strong>shell</strong>: zsh with starship config: ^<br><strong>terminal</strong> editor: emacs with spacemacs<br><strong>config</strong>: <a href="https://gist.github.com/audacioustux/1d4aea266047e3efec5f4796441ae1af">https://gist.github.com/audacioustux/1d4aea266047e3efec5f4796441ae1af</a></p>
+<ol start="3">
+<li><h4 id="tools"><a href="#tools" class="headerlink" title="tools:"></a><strong>tools:</strong></h4></li>
+</ol>
+<p><strong>ripgrep (like grep)</strong>: <a href="https://github.com/BurntSushi/ripgrep">https://github.com/BurntSushi/ripgrep</a><br><strong>bat (like cat)</strong>: <a href="https://github.com/sharkdp/bat">https://github.com/sharkdp/bat</a><br><strong>fkill</strong>: <a href="https://github.com/sindresorhus/fkill-cli">https://github.com/sindresorhus/fkill-cli</a><br><strong>fd (like find)</strong>: <a href="https://github.com/sharkdp/fd">https://github.com/sharkdp/fd</a><br><strong>ag(like ack)</strong>: <a href="https://github.com/ggreer/the_silver_searcher">https://github.com/ggreer/the_silver_searcher</a></p>
+
+        </div>
+        
+        
+        
+    </div>
+</div>
+
+
+
+
+
+
+
+
+    
+<div class="card">
+    
+    <div class="card-image">
+        <a href="/2019/08/01/50-shades-of-computer-science/" class="image is-7by1">
+            <img class="thumbnail" src="/img/binary_tie.jpg" alt="50 shades of computer science">
+        </a>
+    </div>
+    
+    <div class="card-content article ">
+        
+        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
+            <div class="level-left">
+                <time class="level-item has-text-grey" datetime="2019-08-01T03:47:00.000Z">2019-08-01</time>
+                
+                <div class="level-item">
+                <a class="has-link-grey -link" href="/categories/%E0%A6%9C%E0%A7%8D%E0%A6%9E%E0%A6%BE%E0%A6%A8%E0%A6%AC%E0%A6%BE%E0%A6%B0%E0%A7%8D%E0%A6%A4%E0%A6%BE/">জ্ঞানবার্তা</a>&nbsp;/&nbsp;<a class="has-link-grey -link" href="/categories/%E0%A6%9C%E0%A7%8D%E0%A6%9E%E0%A6%BE%E0%A6%A8%E0%A6%AC%E0%A6%BE%E0%A6%B0%E0%A7%8D%E0%A6%A4%E0%A6%BE/academic/">academic</a>
+                </div>
+                
+                
+                <span class="level-item has-text-grey">
+                    
+                    
+                    31 minutes read (About 4609 words)
+                </span>
+                
+                
+            </div>
+        </div>
+        
+        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
+            
+                <a class="has-link-black-ter" href="/2019/08/01/50-shades-of-computer-science/">50 shades of computer science</a>
+            
+        </h1>
+        <div class="content">
+            <h4 id="context-AIUB-Course-Solution-group"><a href="#context-AIUB-Course-Solution-group" class="headerlink" title="context: AIUB Course Solution group"></a><strong>context</strong>: <code>AIUB Course Solution</code> group</h4><hr>
+<h3 id="skill-development-vs-CGPA…"><a href="#skill-development-vs-CGPA…" class="headerlink" title="skill development vs CGPA…"></a>skill development vs CGPA…</h3><p>কনট্রাভার্শাল টপিক যেহেতু, ছোট কইরা বলি, সফ্টওয়্যার ফার্মগুলাতে সিজিপিএ, ভার্সিটির নামের দাম এখন অনেকটা কমে গেছে, পুরাতন HR সিস্টেম গুলা বাদে। সিজিপিএ চাইলে কারিকুলামের জিনিসগুলা ভালোভাবে না বুঝেও বাড়ানো যায়। কিন্তু স্কিল ডেভেলপমেন্টে you have to learn, explore, prove your skill, আর এগুলা আপনি আপনার নিজ তাগিদে করতেছেন। তবে স্কিল ডেভেলপমেন্ট আর ভার্সিটির কারিকুলাম মোটেও সাংঘর্ষিক না। সিএস কোর্স গুলাতে ভালো করলে আর অন্য কোর্স গুলা ক্লাসে এটেন্ড থেকে ফলো করলে সিজি 3.5 এর কাছাকাছি অন্তত রাখা যায়। দিন শেষে আপনার ঠিকই কোর্স গুলার জন্যে টাকা খরচ করতে হইতেছে আর দিনের বেশিরভাগ সময় ভার্সিটির জন্যে খরচ করতে হইতেছে। তো এই সময়টা ভালোভাবে ইউটিলাইজ করাই ভালোনা? এমন তো না আপনি ক্লাসে ল্যাপটপ নিয়ে gitHUB ব্রাউজ করতে পারবেন… so better invest that time… কারন আমরা ম্যাথ, EEE এর সাবজেক্ট গুলাকে অপ্রয়োজনীয় মনে করলেও এর মাহাত্ব জায়গা মত ঠিকি বুঝবেন, ট্রাস্ট মি অন দিস 🙂</p>
+<h3 id="competitive-programming-নাকি-development-🤔"><a href="#competitive-programming-নাকি-development-🤔" class="headerlink" title="competitive programming নাকি development 🤔"></a>competitive programming নাকি development 🤔</h3><p>এইটার উত্তরে কোনোরকম ঘাপলা হইলে গর্দান যাবে। তবে একটা ছোট্ট কিউট কাহিনী দিয়া শুরু করি, সেকেন্ড সেমিস্টারে ডাটা স্ট্রাকচার ল্যাবে কোনো এক সিনিয়র ভাই-এর সাথে কথোপকথন:</p>
+<p><strong>ভাই</strong>: আপনি কোড প্রাক্টিস করেন তাইনা? সব পারেন দেখি</p>
+<p><strong>আমি</strong>: <em><code>blush</code></em> না আমি আগে থেকেই কোডিং করি অল্পস্বল্প</p>
+<p><strong>ভাই</strong>: আপনার <code>UVa</code> তে স্কোর কতো?</p>
+<p><strong>আমি</strong>: <em><code>blush</code></em> with <code>ಠ_ಠ</code> না মানে আমার আসলে ১৬’ এর পর কনটেস্ট বা প্রবলেম সলভিং তেমন একটা আর করা হয়না। আপাতত ডেভেলপমেন্টের কাজ কাম করি।</p>
+<p><strong>ভাই</strong>: _ওসব ডেভেলপমেন্ট দিয়ে কিছুহয়নারে ভাই_। UVa তে ৫০০ এর উপর স্কোর রাখেন। এখান দিয়ে বের হয়ে 60K এর বেতন নিশ্চিৎ</p>
+<p><strong>আমি</strong>: ও 😐 না মানে আমি…</p>
+<p><strong>ভাই</strong>: ভার্সিটি দিয়ে এরপর java,c#,php কোর্স গুলা পাবেন, ঔখান দিয়েই আপনার ৬-৭ টা প্রোজেক্ট হয়ে যাবে। প্রবলেম সল্ভিং করেন। আপনার স্কিল আছে যেহেতু ওদিকে আগান। ওগুলা প্রথম প্রথম ভালো লাগবে। পরে কোনো কাজে আসবে না।</p>
+<p><strong>আমি</strong>: 😐</p>
+<p>আমি স্রিয়াসলি গ্রেটফুল যে সে কথাগুলা বলছে (no sarcasm) বড় ভাইরা নিজেদের ওপিনিয়ন জানাবে ছোটভাইদের ভালোর জন্যে তাই স্বাভাবিক। কিন্তু সমস্যা অন্যজায়গায়, ডেভেলপমেন্টের কি আসলেই কোনো মূল্য নাই? তার আগে ডেভেলপমেন্ট জিনিসটার ডেফিনেশন ক্লিয়ার করি (check wikipedia for official definition) … খুবি জেনারালাইজ ডেফিনেশন বললে এমন কিছুর জন্যে কোড লিখা যার প্রাক্টিকাল ইউসেজ আছে। তা হইতে পারে মোবাইল এপ, গেম, ওয়েবসাইট, কিছু অটোমেট করার জন্যে স্ক্রিপ্ট লিখা বা হতে পারে কোনো লাইব্রেরী, ফ্রেমওয়ার্ক বানানো। মোটামুটি মেইনস্ট্রিম কম্পিটিটিভ প্রোগ্রামিং বাদে সব কিছুই মনে হইতে পারে ডেভেলপমেন্ট। কিন্তু আরো কিছু প্যারাডাইম আছে, ফর এক্সাম্পল ক্রিয়েটিভ প্রোগ্রামিং। ডেভেলপমেন্ট যাস্ট একটা ওয়ার্ড যা অনেক কিছুরে মিন করে। <em>শুধু ওয়েব ডেভেলপমেন্ট না</em> … আমাদের মধ্যে CS সেক্টর নিয়ে অনেক মিথ কাজ করে। তার মধ্যে</p>
+<ol>
+<li><p>বড় বড় কম্পানী কম্পিটিটিভ প্রোগ্রামার হায়ার করে (কিছুটা সত্য depends on context)</p>
+</li>
+<li><p>ডেভেলপমেন্ট মানেই কিছু লাইব্রেরী, ফ্রেমওয়ার্ক ধরে ধুপধাপ কিছু বানায়ে ফেলা, বিশেষ করে ওয়েবসাইট বা মোবাইল এপ্লিকেশন বানায়ে ফেলা।</p>
+</li>
+</ol>
+<p>প্রথমত সব বড় বড় কম্পানি এই কাজ করতে যায়না। বেশিরভাগ(not surveyed) কম্পানী চায় তারা যেই স্ট্যাকে বা যেই টেকনোলজিগুলা নিয়া কাজ করতেছে ওগুলাতে কাজ করা স্কিল্ড পার্সন। সিজিপিএ, সিপি-এর গুরুত্ব আসে তার পরে।</p>
+<p>তবে, তারপরো প্রোগ্রামিং শুরু করার জন্যে কম্পিটিটিভ প্রোগ্রামিং (সিপি) প্রেফার করা হয় কারন এর গাইডলাইন খুব সহজ সরল। আপনি যেকোনো একটা অনলাইন জাজ (hackerrank.com, uva.onlinejudge.org, codeforces.com, codesignal.com ব্লা ব্লা) এ ঢুকে এক টানা প্রবলেম শল্ভ করতে থাকবেন, নতুন নতুন এলগোরিদম শিখতে থাকবেন, কোনো সমস্যায় পরলে যে জানে তারে জিজ্ঞাস করবেন। তবে সবচেয়ে বড় বিষয়… এগুলা করতে গিয়া প্রোগ্রাম্যাটিকালি চিন্তা করতে শিখবেন।</p>
+<p>এমন না যে ডেভেলপমেন্টে এগুলা হয়না। “কম্পিটিটিভ প্রোগ্রামার রা সহজেই সব কিছু শিখে নিতে পারে” এই কথাটারে ৩ নাম্বার মিথ বলা যায়। খুবি খাপছাড়া কথাবার্তা। ডেভেলপমেন্ট যেই ধরনেরই হোক, ডিজাইন প্যাটার্ন, এন্টি-প্যাটার্ন, সিস্টেম ডিজাইন কম বেশি জানা লাগবে। দুই জায়গাতেই কোনো একটা প্রবলেম শল্ভ করা লাগতেছে। দুই জায়গাতেই গভীর জিনিসপত্র আছে যা চাইলেই যখন ইচ্ছা বুঝা সম্ভব না। তবে প্রোগ্রামিং শুরু করার জন্যে ডেভেলপমেন্ট খুব একটা সুবিধার না। এর গাইডলাইন অত জেনারালাইজ ভাবে দেয়া যায়না। কারন, একটু আগে যেটা বললাম, ডেভেলপমেন্ট অনেক বড় একটা স্কোপ। আরো দুইটা মিথ:</p>
+<p>সিপিতে ম্যাথ লাগে, ডেভেলপমেন্টে লাগেনা? যান একটু গ্রাফিক্স প্রোগ্রামিং বা AI, ML ঘেটে আসেন।</p>
+<p>সিপিতে এলগোরিদম লাগে ডেভেলপমেন্টে লাগেনা?</p>
+<p>ওঁ আচ্ছা <code>#understandable</code> 🙂</p>
+<p>আমি এইখানে কোনো সেক্টর বা প্যারাডাইম কেই ছোটো করিনাই, করতে চাইনাই। কারন প্রোগ্রামিং একটা ভালোবাসা &lt;3 যে যেমনে চায় ভালোবাসুক 🙂<br>কম্পিটিটিভ প্রোগ্রামিং লেস কনফিউজিং নতুনদের জন্যে। আসেপাশে অনেক কমিউনিটি পাবেন এর জন্যে। AIUB তেই ACM এর জন্যে বেশ ভালো একটা কমিউনিটি আছে। চাইলে ঔখান দিয়ে প্রোগ্রামিং এর শুরুটা করতে পারেন। কিন্তু কম্পিটিটিভ প্রোগ্রামিং-ই একমাত্র এন্ট্রি পয়েন্ট না। অনেকটা সেইফ পয়েন্ট বলা যাইতে পারে। কারন ডেভেলপমেন্টের ক্ষেত্রে নতুনরা কিছু রিপিটিটিভ কাজ বারবার করে মনে করে তাদের এক্সপেরিয়েন্স বাড়তেছে। এমন আরো কিছু ডিলেমা কাজ করে। প্রোপার গাইডলাইন + মাইন্ডসেট ছাড়া এই এন্ট্রি পয়েন্ট দিয়ে না ঢোকাই ভালো.. পরে ঢুকেন, সময় আছেতো 🙂</p>
+<p>একটু আগে ক্রিয়েটিভ প্রোগ্রামিং এর কথা বলছিলাম। বিষয়টা নিয়া আইডিয়া নিতে <a href="https://github.com/terkelg/awesome-creative-coding">https://github.com/terkelg/awesome-creative-coding</a> এইখান দিয়ে ঘুরে আসতে পারেন।</p>
+<p>তবে আপনি যদি বেশ কয়েকমাষ হয়ে গেছে সিপি করতেছেন টাইপের হয়ে থাকেন ডেভেলপমেন্টের দিকে এক্সপ্লোর করতে পারেন। ডেভেলপারদের ক্ষেত্রেও vice-versa … কিপ লার্নিং নিউ থিংস। একটা করতেছেন বলে আরেকটা করা যাবেনা এমন না।</p>
+<h3 id="এসেমব্লি-লেভেলের-বা-লো-লোভেলের-জিনিসপাতি-কি-শিখার-দরকার-আছে"><a href="#এসেমব্লি-লেভেলের-বা-লো-লোভেলের-জিনিসপাতি-কি-শিখার-দরকার-আছে" class="headerlink" title="এসেমব্লি লেভেলের বা লো লোভেলের জিনিসপাতি কি শিখার দরকার আছে?"></a>এসেমব্লি লেভেলের বা লো লোভেলের জিনিসপাতি কি শিখার দরকার আছে?</h3><p>একটু আগে যেইটা বললাম আরকি, CS একটা ভালোবাসা। ভালোবাসতে চাইলে তার ভালো-খারাপ সবটুকুকে ভালোবাসতে হবে 🙂 ( #ফ্লার্টবার্তা :’3 )</p>
+<p>লো লেভেলের জিনিসগুলা একটু রসকষহীন। ওগুলা জেনে হয়ত মানুষকে দেখানোর মত কিছু বানাতে পারবেন না। কিন্তু <code>Assembly programmers are the only programmers who can truly claim to be the masters, and that’s a truth worth meditating on - jeff duntemann</code></p>
+<p>উক্তিটারে খুব বেশি সিরিয়াসলি নেয়ার দরকার নাই। কিন্তু এর জিস্ট টা উপলব্ধি করা দরকার। লো লেভেল জিনিসগুলা, ফান্ডামেন্টাল কনসেপ্ট অফ কম্পিউটেশন না জানলে সার্টিফিকেট যত দামীই হোক, নিজেরে আত্ববিশ্বাসের সঙ্গে কম্পিউটার ইন্জিনিয়ার হিসাবে হয়ত পরিচয় দিতে পারবেন না।</p>
+<p>কম্পিউটার সায়েন্স অনেক মোভনীয় মসলা মাখানো একটা সাবজেক্ট। এখন ইহা জাতীয় সাবজেক্ট। বেশিরভাগ সময় জিনিসটা খুব সহজ হিসাবে নতুনদের কাছে উপস্থাপন করা হয়। না… মোটেও সহজ না। it’s a wild roller coaster 🙂 কিপ লার্নিং, তা নিজের ভালো লাগার জন্যে হোক, বা চাকরির বাজারে নিজেকে তৈরী রাখতে। ফ্রেমওয়ার্ক, লাইব্রেরী সবাই চাইলেই ডকুমেন্টেশন ঘেটে শিখতে পারে… যে জিনিসগুলা অন্যরা ভয় পেয়ে শিখতে চায়না consider learning them too, if that makes you a better programmer and makes you higher than average…</p>
+<p><code>#KTHXBYE</code> 🙂</p>
+
+        </div>
+        
+        
+        
+    </div>
+</div>
+
+
+
+
+
+
+
+
+    
+<div class="card">
+    
+    <div class="card-image">
+        <a href="/2019/04/05/%E0%A6%8F%E0%A6%95%E0%A6%97%E0%A6%BE%E0%A6%A6%E0%A6%BE-%E0%A6%B2%E0%A6%BE%E0%A6%B0%E0%A7%8D%E0%A6%A8%E0%A6%BF%E0%A6%82-%E0%A6%B0%E0%A6%BF%E0%A6%B8%E0%A7%8B%E0%A6%B0%E0%A7%8D%E0%A6%B8-%E0%A6%95%E0%A6%BF%E0%A6%9B%E0%A7%81-%E0%A6%B0%E2%80%8D%E0%A7%8D%E0%A6%AF%E0%A6%BE%E0%A6%A8%E0%A7%8D%E0%A6%A1%E0%A6%AE-%E0%A6%A4%E0%A6%BF%E0%A6%95%E0%A7%8D%E0%A6%A4-%E0%A6%8F%E0%A6%AC%E0%A6%82-%E0%A6%B8%E0%A7%8B%E0%A6%B2%E0%A6%BE%E0%A6%87%E0%A6%AE%E0%A6%BE%E0%A6%A8%E0%A7%80-%E0%A6%95%E0%A6%A5%E0%A6%BE%E0%A6%AC%E0%A6%BE%E0%A6%B0%E0%A7%8D%E0%A6%A4%E0%A6%BE/" class="image is-7by1">
+            <img class="thumbnail" src="/img/map-of-computer-science.jpg" alt="একগাদা লার্নিং রিসোর্স, কিছু র‍্যান্ডম, তিক্ত এবং সোলাইমানী কথাবার্তা">
+        </a>
+    </div>
+    
+    <div class="card-content article ">
+        
+        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
+            <div class="level-left">
+                <time class="level-item has-text-grey" datetime="2019-04-05T04:14:51.000Z">2019-04-05</time>
+                
+                <div class="level-item">
+                <a class="has-link-grey -link" href="/categories/%E0%A6%9C%E0%A7%8D%E0%A6%9E%E0%A6%BE%E0%A6%A8%E0%A6%AC%E0%A6%BE%E0%A6%B0%E0%A7%8D%E0%A6%A4%E0%A6%BE/">জ্ঞানবার্তা</a>&nbsp;/&nbsp;<a class="has-link-grey -link" href="/categories/%E0%A6%9C%E0%A7%8D%E0%A6%9E%E0%A6%BE%E0%A6%A8%E0%A6%AC%E0%A6%BE%E0%A6%B0%E0%A7%8D%E0%A6%A4%E0%A6%BE/academic/">academic</a>
+                </div>
+                
+                
+                <span class="level-item has-text-grey">
+                    
+                    
+                    15 minutes read (About 2307 words)
+                </span>
+                
+                
+            </div>
+        </div>
+        
+        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
+            
+                <a class="has-link-black-ter" href="/2019/04/05/%E0%A6%8F%E0%A6%95%E0%A6%97%E0%A6%BE%E0%A6%A6%E0%A6%BE-%E0%A6%B2%E0%A6%BE%E0%A6%B0%E0%A7%8D%E0%A6%A8%E0%A6%BF%E0%A6%82-%E0%A6%B0%E0%A6%BF%E0%A6%B8%E0%A7%8B%E0%A6%B0%E0%A7%8D%E0%A6%B8-%E0%A6%95%E0%A6%BF%E0%A6%9B%E0%A7%81-%E0%A6%B0%E2%80%8D%E0%A7%8D%E0%A6%AF%E0%A6%BE%E0%A6%A8%E0%A7%8D%E0%A6%A1%E0%A6%AE-%E0%A6%A4%E0%A6%BF%E0%A6%95%E0%A7%8D%E0%A6%A4-%E0%A6%8F%E0%A6%AC%E0%A6%82-%E0%A6%B8%E0%A7%8B%E0%A6%B2%E0%A6%BE%E0%A6%87%E0%A6%AE%E0%A6%BE%E0%A6%A8%E0%A7%80-%E0%A6%95%E0%A6%A5%E0%A6%BE%E0%A6%AC%E0%A6%BE%E0%A6%B0%E0%A7%8D%E0%A6%A4%E0%A6%BE/">একগাদা লার্নিং রিসোর্স, কিছু র‍্যান্ডম, তিক্ত এবং সোলাইমানী কথাবার্তা</a>
+            
+        </h1>
+        <div class="content">
+            <h4 id="context-AIUB-Course-Solution-group"><a href="#context-AIUB-Course-Solution-group" class="headerlink" title="context: AIUB Course Solution group"></a><strong>context</strong>: <code>AIUB Course Solution</code> group</h4><hr>
+<p>ফার্স্ট সেমিস্টার থেকে ক্লাসমেট বা জুনিয়রদের ভার্সিটি সিলেবাসের বাইরে কিছু শিখার জন্যে ঘুতাইতেছি। দুয়েকজন শুনতেছে যারা তাদের যতদূর সম্ভব হেল্প করার চেষ্টা করি। ৮ বছর ধরে নিজে যে সেক্টরে কাজ করে আসতেছি সেখানে অন্যদের আগ্রহ দেখতে ভালো লাগে আরকি।</p>
+<p>CS সেক্টরে প্রচুর শাখা প্রশাখা আছে। কোনটাতে আপনার ভালোলাগা কাজ করে তা আপনার নিজের খুজে বের করা লাগবে। আর তার জন্যে আপনার কয়েকটা CS এর শাখা-প্রশাখা নিয়ে ঘুতাঘুতি করা লাগবে, অল্পস্বল্প জ্ঞান থাকা লাগবে। আর এই ঘুতাঘুতির শুরুটা ভার্সিটির এই ৩-৪ বছরের মধ্যে যত দ্রুত শুরু করবেন, আপনার জন্যেই ভালো।</p>
+<p>যেকোনো কিছু দিয়ে শুরু করেন। তা হতে পারে ওয়েব ডেভেলপমেন্ট, অনলাইন জাজ-এ প্রবলেম সল্ভিং অথবা অন্য যেকোনো কিছু দিয়ে। কিন্তু বসে থাকিয়েন না;<br>সাথে ভার্সিটির কারিকুলাম ফলো করতে থাকেন। ভার্সিটির কোর্স আপনাকে হাতে-কলমে যা শিখাবে তার খুবি নগন্য অংশ আপনার আসলেই কাজে লাগবে। কিন্তু এই কারিকুলাম অনেকগুলা CS সেক্টর কভার করে। যা আগেই বললাম, আপনাকে আপনার ভালো লাগার জায়গাটা খুজে পেতে সাহায্য করবে। সিজি ভালো রাখবো নাকি স্কিল ডেভেলপ করবো এই প্রশ্ন অর্থহীন। আপনি যদি বুঝে ভার্সিটির কোর্স গুলা শেষ করেন আপনার স্কিল তাতেও ডেভেলপ হচ্ছে।</p>
+<p>এত শাখা প্রশাখার ভেতর দিয়ে কোনটা দিয়ে শুরু করবেন চিন্তায় থাকলে চোখের সামনে যেটা প্রথমে আসতেছে সেটা দিয়ে শুরু করে দিন। যতদিন ধরে কোন এডিটর ভালো, কোন ল্যাঙ্গুয়েজ ভালো এসব চিন্তা করতে থাকবেন আপনার ৩ বছরের সময় লিমিট ততদিনে শেষ হয়ে যাবে। তো অন্তত শুরু করেন।</p>
+<ul>
+<li>ভার্সিটির এসাইনমেন্ট গুলা করতে ভালো না লাগলেও নিজে করেন।</li>
+<li>কমফোর্ট জোনে থাকার চেষ্টা করিয়েন না</li>
+<li>সবসময় বাংলা টিউটোরিয়াল খোজা থেকে বিরত থাকেন</li>
+<li>DONT GET ISOLATED</li>
+<li>মিটআপ, সেমিনার, কমিউনিকেশন স্কিল এগুলার আলাদা গুরুত্ব আছে</li>
+<li>code everyday… নিজের প্রোগ্রেস মনিটর করতে গিটহাবে প্রতিদিন কোড আপলোড করতে পারেন, তা যতটুক কোডই হোক।</li>
+<li>read books; listen to audio books and podcasts, including the non-CS ones;</li>
+<li>learn how to learn new things, how to use a search engine or use an operating system as a tool</li>
+<li>সম্ভব হলে একটা ট্যাব কিনে নেন পিডিএফ পড়ার জন্যে <a href="https://www.amazon.com/Amazon-Fire-HD-10-Inch-Tablet-32GB-Black/dp/B01J6RPGKG">https://www.amazon.com/Amazon-Fire-HD-10-Inch-Tablet-32GB-Black/dp/B01J6RPGKG</a></li>
+<li>“try to Learn something about everything and everything about something” – Thomas Huxley</li>
+</ul>
+<p>কোডিং রিলেটেড কথাবার্তার জন্যে <a href="https://t.me/chitchatofaiubian">telegram group</a> টেলিগ্রাম গ্রুপটা খোলা হলো। মোবাইলে telegram অ্যাপ টা ইন্সটল করে কোনো প্রশ্ন থাকলে করতে পারেন বা অন্যদের সাথে কথাবার্তা বলতে পারেন।</p>
+<p><em>একগাদা রিসোর্স…</em></p>
+<h3 id="Computer-Fundamental"><a href="#Computer-Fundamental" class="headerlink" title="Computer Fundamental:"></a>Computer Fundamental:</h3><h4 id="শুরু-https-www-youtube-com-watch-v-tpIctyqH29Q-amp-list-PL8dPuuaLjXtNlUrzyH5r6jN9ulIgZBpdo"><a href="#শুরু-https-www-youtube-com-watch-v-tpIctyqH29Q-amp-list-PL8dPuuaLjXtNlUrzyH5r6jN9ulIgZBpdo" class="headerlink" title="শুরু: https://www.youtube.com/watch?v=tpIctyqH29Q&amp;list=PL8dPuuaLjXtNlUrzyH5r6jN9ulIgZBpdo"></a>শুরু: <a href="https://www.youtube.com/watch?v=tpIctyqH29Q&amp;list=PL8dPuuaLjXtNlUrzyH5r6jN9ulIgZBpdo">https://www.youtube.com/watch?v=tpIctyqH29Q&amp;list=PL8dPuuaLjXtNlUrzyH5r6jN9ulIgZBpdo</a></h4><h3 id="Computer-Architecture-skip-if-u-want"><a href="#Computer-Architecture-skip-if-u-want" class="headerlink" title="Computer Architecture: (skip if u want)"></a>Computer Architecture: (skip if u want)</h3><h4 id="শুরু-https-www-amazon-com-Computer-Systems-Programmers-Perspective-3rd-dp-013409266X-this-book-is-freaking-awesome-lt-3-বই-কিনার-টাকা-না-থাকলে-http-gen-lib-rus-ec-টাকা-হলে-কিনিয়েন-🙂"><a href="#শুরু-https-www-amazon-com-Computer-Systems-Programmers-Perspective-3rd-dp-013409266X-this-book-is-freaking-awesome-lt-3-বই-কিনার-টাকা-না-থাকলে-http-gen-lib-rus-ec-টাকা-হলে-কিনিয়েন-🙂" class="headerlink" title="শুরু: https://www.amazon.com/Computer-Systems-Programmers-Perspective-3rd/dp/013409266X (this book is freaking awesome &lt;3 ) বই কিনার টাকা না থাকলে http://gen.lib.rus.ec/ টাকা হলে কিনিয়েন 🙂"></a>শুরু: <a href="https://www.amazon.com/Computer-Systems-Programmers-Perspective-3rd/dp/013409266X">https://www.amazon.com/Computer-Systems-Programmers-Perspective-3rd/dp/013409266X</a> (this book is freaking awesome &lt;3 ) বই কিনার টাকা না থাকলে <a href="http://gen.lib.rus.ec/">http://gen.lib.rus.ec/</a> টাকা হলে কিনিয়েন 🙂</h4><h3 id="Programming-Fundamental"><a href="#Programming-Fundamental" class="headerlink" title="Programming Fundamental:"></a>Programming Fundamental:</h3><h3 id="C-or-python"><a href="#C-or-python" class="headerlink" title="C++ or python:"></a>C++ or python:</h3><h4 id="C"><a href="#C" class="headerlink" title="C++:"></a>C++:</h4><h4 id="শুরু-https-www-youtube-com-watch-v-vLnPwxZdW4Y"><a href="#শুরু-https-www-youtube-com-watch-v-vLnPwxZdW4Y" class="headerlink" title="শুরু: https://www.youtube.com/watch?v=vLnPwxZdW4Y"></a>শুরু: <a href="https://www.youtube.com/watch?v=vLnPwxZdW4Y">https://www.youtube.com/watch?v=vLnPwxZdW4Y</a></h4><ul>
+<li>better: <a href="https://www.youtube.com/watch?v=18c3MTX0PK0&amp;list=PLlrATfBNZ98dudnM48yfGUldqGD0S4FFb">https://www.youtube.com/watch?v=18c3MTX0PK0&amp;list=PLlrATfBNZ98dudnM48yfGUldqGD0S4FFb</a></li>
+<li>advance: <a href="https://www.youtube.com/watch?v=mUQZ1qmKlLY&amp;t=8113s">https://www.youtube.com/watch?v=mUQZ1qmKlLY&amp;t=8113s</a></li>
+</ul>
+<p>বই: how to program c++ by dietel</p>
+<h4 id="Python"><a href="#Python" class="headerlink" title="Python:"></a>Python:</h4><h4 id="শুরু-https-www-youtube-com-watch-v-rfscVS0vtbw"><a href="#শুরু-https-www-youtube-com-watch-v-rfscVS0vtbw" class="headerlink" title="শুরু: https://www.youtube.com/watch?v=rfscVS0vtbw"></a>শুরু: <a href="https://www.youtube.com/watch?v=rfscVS0vtbw">https://www.youtube.com/watch?v=rfscVS0vtbw</a></h4><p>or: <a href="https://docs.python-guide.org/">https://docs.python-guide.org/</a></p>
+<p>বই: python 101 and 201 by mike driscoll</p>
+<h3 id="Algorithms"><a href="#Algorithms" class="headerlink" title="Algorithms:"></a>Algorithms:</h3><h4 id="শুরু-https-www-youtube-com-watch-v-0IAPZzGSbME-amp-list-PLDN4rrl48XKpZkf03iYFl-O29szjTrs-O"><a href="#শুরু-https-www-youtube-com-watch-v-0IAPZzGSbME-amp-list-PLDN4rrl48XKpZkf03iYFl-O29szjTrs-O" class="headerlink" title="শুরু: https://www.youtube.com/watch?v=0IAPZzGSbME&amp;list=PLDN4rrl48XKpZkf03iYFl-O29szjTrs_O"></a>শুরু: <a href="https://www.youtube.com/watch?v=0IAPZzGSbME&amp;list=PLDN4rrl48XKpZkf03iYFl-O29szjTrs_O">https://www.youtube.com/watch?v=0IAPZzGSbME&amp;list=PLDN4rrl48XKpZkf03iYFl-O29szjTrs_O</a></h4><p>or: <a href="https://www.geeksforgeeks.org">https://www.geeksforgeeks.org</a></p>
+<p>বই: CLRS or grokking</p>
+<ul>
+<li>Tools &amp; IDEs: vscode, github</li>
+</ul>
+<h3 id="Web-Development"><a href="#Web-Development" class="headerlink" title="Web Development"></a>Web Development</h3><h4 id="Overview-https-www-youtube-com-watch-v-i4laq6e-B6U"><a href="#Overview-https-www-youtube-com-watch-v-i4laq6e-B6U" class="headerlink" title="Overview: https://www.youtube.com/watch?v=i4laq6e_B6U"></a>Overview: <a href="https://www.youtube.com/watch?v=i4laq6e_B6U">https://www.youtube.com/watch?v=i4laq6e_B6U</a></h4><h3 id="Frontend"><a href="#Frontend" class="headerlink" title="Frontend"></a>Frontend</h3><h4 id="HTML"><a href="#HTML" class="headerlink" title="HTML:"></a>HTML:</h4><h4 id="শুরু-https-www-codecademy-com-learn-learn-html"><a href="#শুরু-https-www-codecademy-com-learn-learn-html" class="headerlink" title="শুরু: https://www.codecademy.com/learn/learn-html"></a>শুরু: <a href="https://www.codecademy.com/learn/learn-html">https://www.codecademy.com/learn/learn-html</a></h4><p>বা <a href="https://www.youtube.com/watch?v=pQN-pnXPaVg">https://www.youtube.com/watch?v=pQN-pnXPaVg</a><br>বাংলায়: <a href="https://www.youtube.com/watch?v=gjVvFd0bv6s">https://www.youtube.com/watch?v=gjVvFd0bv6s</a></p>
+<h4 id="CSS"><a href="#CSS" class="headerlink" title="CSS:"></a>CSS:</h4><h4 id="শুরু-https-www-youtube-com-watch-v-ieTHC78giGQ"><a href="#শুরু-https-www-youtube-com-watch-v-ieTHC78giGQ" class="headerlink" title="শুরু: https://www.youtube.com/watch?v=ieTHC78giGQ"></a>শুরু: <a href="https://www.youtube.com/watch?v=ieTHC78giGQ">https://www.youtube.com/watch?v=ieTHC78giGQ</a></h4><h4 id="javascript"><a href="#javascript" class="headerlink" title="javascript:"></a>javascript:</h4><h4 id="শুরু-https-www-youtube-com-watch-v-PkZNo7MFNFg"><a href="#শুরু-https-www-youtube-com-watch-v-PkZNo7MFNFg" class="headerlink" title="শুরু: https://www.youtube.com/watch?v=PkZNo7MFNFg"></a>শুরু: <a href="https://www.youtube.com/watch?v=PkZNo7MFNFg">https://www.youtube.com/watch?v=PkZNo7MFNFg</a></h4><h4 id="react-or-vue-কনফিউশন-থাকলে-রিয়েক্ট"><a href="#react-or-vue-কনফিউশন-থাকলে-রিয়েক্ট" class="headerlink" title="react or vue: (কনফিউশন থাকলে রিয়েক্ট)"></a>react or vue: (কনফিউশন থাকলে রিয়েক্ট)</h4><h4 id="react-শুরু-https-reactjs-org-tutorial-tutorial-html"><a href="#react-শুরু-https-reactjs-org-tutorial-tutorial-html" class="headerlink" title="react শুরু: https://reactjs.org/tutorial/tutorial.html"></a>react শুরু: <a href="https://reactjs.org/tutorial/tutorial.html">https://reactjs.org/tutorial/tutorial.html</a></h4><ul>
+<li>then: <a href="https://nextjs.org/learn/basics/getting-started">https://nextjs.org/learn/basics/getting-started</a></li>
+</ul>
+<h4 id="vue-শুরু-https-vuejs-org-v2-guide"><a href="#vue-শুরু-https-vuejs-org-v2-guide" class="headerlink" title="vue শুরু: https://vuejs.org/v2/guide/"></a>vue শুরু: <a href="https://vuejs.org/v2/guide/">https://vuejs.org/v2/guide/</a></h4><ul>
+<li>then: <a href="https://nuxtjs.org/guide/installation">https://nuxtjs.org/guide/installation</a></li>
+</ul>
+<h3 id="Designing"><a href="#Designing" class="headerlink" title="Designing:"></a>Designing:</h3><p>খাতা-পেনসিল(মেকানিকাল), ভেক্টর গ্রাফিক্স/svg(illustrator/inkscape/gravit)</p>
+<h4 id="শুরু-https-www-youtube-com-watch-v-Hp-dI0DzY4"><a href="#শুরু-https-www-youtube-com-watch-v-Hp-dI0DzY4" class="headerlink" title="শুরু: https://www.youtube.com/watch?v=_Hp_dI0DzY4"></a>শুরু: <a href="https://www.youtube.com/watch?v=_Hp_dI0DzY4">https://www.youtube.com/watch?v=_Hp_dI0DzY4</a></h4><p>বই: <a href="https://refactoringui.com/book/">https://refactoringui.com/book/</a></p>
+<h5 id="Libraries-amp-Tools-bulma-babel-typescript"><a href="#Libraries-amp-Tools-bulma-babel-typescript" class="headerlink" title="Libraries &amp; Tools: bulma, babel, typescript"></a>Libraries &amp; Tools: bulma, babel, typescript</h5><h3 id="Backend"><a href="#Backend" class="headerlink" title="Backend"></a>Backend</h3><h4 id="python-django-or-nodejs-express-or-php-laravel"><a href="#python-django-or-nodejs-express-or-php-laravel" class="headerlink" title="- python/django or nodejs/express or php/laravel:"></a>- python/django or nodejs/express or php/laravel:</h4><h4 id="django"><a href="#django" class="headerlink" title="django:"></a>django:</h4><h4 id="শুরু-https-www-youtube-com-watch-v-rfscVS0vtbw-1"><a href="#শুরু-https-www-youtube-com-watch-v-rfscVS0vtbw-1" class="headerlink" title="শুরু: https://www.youtube.com/watch?v=rfscVS0vtbw"></a>শুরু: <a href="https://www.youtube.com/watch?v=rfscVS0vtbw">https://www.youtube.com/watch?v=rfscVS0vtbw</a></h4><ul>
+<li>then: <a href="https://www.youtube.com/watch?v=F5mRW0jo-U4">https://www.youtube.com/watch?v=F5mRW0jo-U4</a></li>
+<li>then: <a href="https://docs.djangoproject.com/en/2.2/intro/tutorial01/">https://docs.djangoproject.com/en/2.2/intro/tutorial01/</a></li>
+</ul>
+<h4 id="laravel"><a href="#laravel" class="headerlink" title="laravel:"></a>laravel:</h4><h4 id="শুরু-https-www-youtube-com-watch-v-OK-JCtrrv-c"><a href="#শুরু-https-www-youtube-com-watch-v-OK-JCtrrv-c" class="headerlink" title="শুরু: https://www.youtube.com/watch?v=OK_JCtrrv-c"></a>শুরু: <a href="https://www.youtube.com/watch?v=OK_JCtrrv-c">https://www.youtube.com/watch?v=OK_JCtrrv-c</a></h4><ul>
+<li>then: <a href="https://www.youtube.com/watch?v=EU7PRmCpx-0&amp;list=PLillGF-RfqbYhQsN5WMXy6VsDMKGadrJ-">https://www.youtube.com/watch?v=EU7PRmCpx-0&amp;list=PLillGF-RfqbYhQsN5WMXy6VsDMKGadrJ-</a></li>
+</ul>
+<h4 id="express"><a href="#express" class="headerlink" title="express:"></a>express:</h4><h4 id="শুরু-https-www-youtube-com-watch-v-L72fhGm1tfE"><a href="#শুরু-https-www-youtube-com-watch-v-L72fhGm1tfE" class="headerlink" title="শুরু: https://www.youtube.com/watch?v=L72fhGm1tfE"></a>শুরু: <a href="https://www.youtube.com/watch?v=L72fhGm1tfE">https://www.youtube.com/watch?v=L72fhGm1tfE</a></h4><ul>
+<li>then MERN(MongoDB, Express, React, Node.js): <a href="https://www.youtube.com/playlist?list=PLillGF-RfqbbiTGgA77tGO426V3hRF9iE">https://www.youtube.com/playlist?list=PLillGF-RfqbbiTGgA77tGO426V3hRF9iE</a><br>or sequelize with postgres: <a href="http://docs.sequelizejs.com/">http://docs.sequelizejs.com/</a><br>or knex + objectionJS</li>
+</ul>
+<h5 id="Tools-amp-Stack-redis-docker-postgresql-nginx-linux"><a href="#Tools-amp-Stack-redis-docker-postgresql-nginx-linux" class="headerlink" title="Tools &amp; Stack: redis, docker, postgresql, nginx, linux"></a>Tools &amp; Stack: redis, docker, postgresql, nginx, linux</h5><h3 id="mobile-application-development"><a href="#mobile-application-development" class="headerlink" title="mobile application development:"></a>mobile application development:</h3><h4 id="শুরু-https-flutter-dev-docs-get-started-install"><a href="#শুরু-https-flutter-dev-docs-get-started-install" class="headerlink" title="শুরু: https://flutter.dev/docs/get-started/install"></a>শুরু: <a href="https://flutter.dev/docs/get-started/install">https://flutter.dev/docs/get-started/install</a></h4><h4 id="graphics-programming-native"><a href="#graphics-programming-native" class="headerlink" title="graphics programming (native):"></a>graphics programming (native):</h4><p>With game engine: unity or unreal or other game engines<br>without game engine (opengl):</p>
+<ul>
+<li><a href="https://www.youtube.com/watch?v=W3gAzLwfIP0&amp;list=PLlrATfBNZ98foTJPJ_Ev03o2oq3-GGOS2">https://www.youtube.com/watch?v=W3gAzLwfIP0&amp;list=PLlrATfBNZ98foTJPJ_Ev03o2oq3-GGOS2</a></li>
+</ul>
+<h4 id="graphics-programming-web"><a href="#graphics-programming-web" class="headerlink" title="graphics programming (web):"></a>graphics programming (web):</h4><p>svg, html canvas, javascript<br>or (advance): threejs, whitestormjs</p>
+<h4 id="course-https-www-udacity-com-course-interactive-3d-graphics-cs291"><a href="#course-https-www-udacity-com-course-interactive-3d-graphics-cs291" class="headerlink" title="course: https://www.udacity.com/course/interactive-3d-graphics--cs291"></a>course: <a href="https://www.udacity.com/course/interactive-3d-graphics--cs291">https://www.udacity.com/course/interactive-3d-graphics--cs291</a></h4><h3 id="computer-security-hacking-cracking"><a href="#computer-security-hacking-cracking" class="headerlink" title="computer security/hacking/cracking:"></a>computer security/hacking/cracking:</h3><h4 id="শুরু-https-www-youtube-com-watch-v-iyAyN3GFM7A-amp-list-PLhixgUqwRTjxglIswKp9mpkfPNfHkzyeN"><a href="#শুরু-https-www-youtube-com-watch-v-iyAyN3GFM7A-amp-list-PLhixgUqwRTjxglIswKp9mpkfPNfHkzyeN" class="headerlink" title="শুরু: https://www.youtube.com/watch?v=iyAyN3GFM7A&amp;list=PLhixgUqwRTjxglIswKp9mpkfPNfHkzyeN"></a>শুরু: <a href="https://www.youtube.com/watch?v=iyAyN3GFM7A&amp;list=PLhixgUqwRTjxglIswKp9mpkfPNfHkzyeN">https://www.youtube.com/watch?v=iyAyN3GFM7A&amp;list=PLhixgUqwRTjxglIswKp9mpkfPNfHkzyeN</a></h4><p>প্রোগ্রামিং সহজ, কিন্তু শেখা সময় সাপেক্ষ। ভার্সিটির সিলেবাসের বাইরে কিছু শিখতে কষ্ট হইলে অন্তত ভার্সিটির এসাইনমেন্টগুলা নিজে করেন। don’t let yourself be another “মোবাইলে গানলোডার” 🙂</p>
+<p><code>#KTHXBYE</code> 🙂</p>
+
+        </div>
+        
+        
+        
+    </div>
+</div>
+
+
+
+
+
+
+
+
+</div>
+                
+
+
+
+
+<div class="column is-4-tablet is-4-desktop is-3-widescreen  has-order-1 column-left ">
+    
+        
+<div class="card widget">
+    <div class="card-content">
+        <nav class="level">
+            <div class="level-item has-text-centered" style="flex-shrink: 1">
+                <div>
+                    
+                    <figure class="image is-128x128 has-mb-6">
+                        <img class="is-rounded" src="https://raw.githubusercontent.com/audacioustux/paste/master/7238675.jpg" alt="Tanjim Hossain">
+                    </figure>
+                    
+                    <p class="is-size-4 is-block">
+                        Tanjim Hossain
+                    </p>
+                    
+                    
+                    <p class="is-size-6 is-block">
+                        Audacious Tux
+                    </p>
+                    
+                    
+                    <p class="is-size-6 is-flex is-flex-center has-text-grey">
+                        <i class="fas fa-map-marker-alt has-mr-7"></i>
+                        <span>Dhaka, Bangladesh</span>
+                    </p>
+                    
+                </div>
+            </div>
+        </nav>
+        <nav class="level is-mobile">
+            <div class="level-item has-text-centered is-marginless">
+                <div>
+                    <p class="heading">
+                        Posts
+                    </p>
+                    <a href="/archives">
+                        <p class="title has-text-weight-normal">
+                            7
+                        </p>
+                    </a>
+                </div>
+            </div>
+            <div class="level-item has-text-centered is-marginless">
+                <div>
+                    <p class="heading">
+                        Categories
+                    </p>
+                    <a href="/categories">
+                        <p class="title has-text-weight-normal">
+                            8
+                        </p>
+                    </a>
+                </div>
+            </div>
+            <div class="level-item has-text-centered is-marginless">
+                <div>
+                    <p class="heading">
+                        Tags
+                    </p>
+                    <a href="/tags">
+                        <p class="title has-text-weight-normal">
+                            22
+                        </p>
+                    </a>
+                </div>
+            </div>
+        </nav>
+        
+        <div class="level">
+            <a class="level-item button is-link is-rounded" href="https://github.com/audacioustux" target="_blank" rel="noopener">
+                Follow</a>
+        </div>
+        
+        
+        
+        <div class="level is-mobile">
+            
+            <a class="level-item button is-white is-marginless" target="_blank" rel="noopener"
+                title="Github" href="https://github.com/audacioustux">
+                
+                <i class="fab fa-github"></i>
+                
+            </a>
+            
+            <a class="level-item button is-white is-marginless" target="_blank" rel="noopener"
+                title="Facebook" href="https://facebook.com/htanjim">
+                
+                <i class="fab fa-facebook"></i>
+                
+            </a>
+            
+            <a class="level-item button is-white is-marginless" target="_blank" rel="noopener"
+                title="Telegram" href="https://t.me/audacioustux">
+                
+                <i class="fab fa-telegram-plane"></i>
+                
+            </a>
+            
+        </div>
+        
+    </div>
+</div>
+    
+        
+    
+        <div class="card widget">
+    <div class="card-content">
+        <div class="menu">
+        <h3 class="menu-label">
+            Links
+        </h3>
+        <ul class="menu-list">
+        
+            <li>
+                <a class="level is-mobile" href="https://wiki.ubuntu.com/tanjim" target="_blank" rel="noopener">
+                    <span class="level-left">
+                        <span class="level-item">wiki</span>
+                    </span>
+                    <span class="level-right">
+                        <span class="level-item tag">wiki.ubuntu.com</span>
+                    </span>
+                </a>
+            </li>
+        
+        </ul>
+        </div>
+    </div>
+</div>
+
+    
+        
+<div class="card widget">
+    <div class="card-content">
+        <div class="menu">
+            <h3 class="menu-label">
+                Categories
+            </h3>
+            <ul class="menu-list">
+            <li>
+        <a class="level is-marginless" href="/categories/linux/">
+            <span class="level-start">
+                <span class="level-item">linux</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">1</span>
+            </span>
+        </a></li><li>
+        <a class="level is-marginless" href="/categories/nodeJS/">
+            <span class="level-start">
+                <span class="level-item">nodeJS</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">1</span>
+            </span>
+        </a><ul><li>
+        <a class="level is-marginless" href="/categories/nodeJS/typescript/">
+            <span class="level-start">
+                <span class="level-item">typescript</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">1</span>
+            </span>
+        </a></li></ul></li><li>
+        <a class="level is-marginless" href="/categories/programming/">
+            <span class="level-start">
+                <span class="level-item">programming</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">2</span>
+            </span>
+        </a><ul><li>
+        <a class="level is-marginless" href="/categories/programming/cpp/">
+            <span class="level-start">
+                <span class="level-item">cpp</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">1</span>
+            </span>
+        </a></li><li>
+        <a class="level is-marginless" href="/categories/programming/esolang/">
+            <span class="level-start">
+                <span class="level-item">esolang</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">1</span>
+            </span>
+        </a></li></ul></li><li>
+        <a class="level is-marginless" href="/categories/%E0%A6%9C%E0%A7%8D%E0%A6%9E%E0%A6%BE%E0%A6%A8%E0%A6%AC%E0%A6%BE%E0%A6%B0%E0%A7%8D%E0%A6%A4%E0%A6%BE/">
+            <span class="level-start">
+                <span class="level-item">জ্ঞানবার্তা</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">2</span>
+            </span>
+        </a><ul><li>
+        <a class="level is-marginless" href="/categories/%E0%A6%9C%E0%A7%8D%E0%A6%9E%E0%A6%BE%E0%A6%A8%E0%A6%AC%E0%A6%BE%E0%A6%B0%E0%A7%8D%E0%A6%A4%E0%A6%BE/academic/">
+            <span class="level-start">
+                <span class="level-item">academic</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">2</span>
+            </span>
+        </a></li></ul></li>
+            </ul>
+        </div>
+    </div>
+</div>
+    
+        <div class="card widget">
+    <div class="card-content">
+        <h3 class="menu-label">
+            Tag Cloud
+        </h3>
+        <a href="/tags/academia/" style="font-size: 15px;">academia</a> <a href="/tags/bash/" style="font-size: 10px;">bash</a> <a href="/tags/brainfuck/" style="font-size: 10px;">brainfuck</a> <a href="/tags/c/" style="font-size: 10px;">c++</a> <a href="/tags/chit-chat/" style="font-size: 10px;">chit~chat</a> <a href="/tags/competitive-programming/" style="font-size: 10px;">competitive programming</a> <a href="/tags/config/" style="font-size: 15px;">config</a> <a href="/tags/development/" style="font-size: 10px;">development</a> <a href="/tags/esolang/" style="font-size: 10px;">esolang</a> <a href="/tags/lolcode/" style="font-size: 10px;">lolcode</a> <a href="/tags/nodeJS/" style="font-size: 10px;">nodeJS</a> <a href="/tags/piet/" style="font-size: 10px;">piet</a> <a href="/tags/pointer/" style="font-size: 10px;">pointer</a> <a href="/tags/proxy/" style="font-size: 10px;">proxy</a> <a href="/tags/reference/" style="font-size: 10px;">reference</a> <a href="/tags/resource/" style="font-size: 10px;">resource</a> <a href="/tags/secrets/" style="font-size: 10px;">secrets</a> <a href="/tags/tips/" style="font-size: 20px;">tips</a> <a href="/tags/tools/" style="font-size: 10px;">tools</a> <a href="/tags/typescript/" style="font-size: 10px;">typescript</a> <a href="/tags/zram/" style="font-size: 10px;">zram</a> <a href="/tags/zswap/" style="font-size: 10px;">zswap</a>
+    </div>
+</div>
+    
+    
+        <div class="column-right-shadow is-hidden-widescreen ">
+        
+            <div class="card widget">
+    <div class="card-content">
+        <h3 class="menu-label">
+            Recent
+        </h3>
+        
+        <article class="media">
+            
+            <a href="/2020/04/02/Programming-Language-101/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="Programming Language 101">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-04-02T01:56:16.000Z">2020-04-02</time></div>
+                    <a href="/2020/04/02/Programming-Language-101/" class="title has-link-black-ter is-size-6 has-text-weight-normal">Programming Language 101</a>
+                    <p class="is-size-7 is-uppercase">
+                        
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2020/02/21/%E0%A6%AA%E0%A7%9F%E0%A7%87%E0%A6%A8%E0%A7%8D%E0%A6%9F%E0%A6%BE%E0%A6%B0-%E0%A6%A8%E0%A6%BF%E0%A7%9F%E0%A6%BE-%E0%A6%95%E0%A6%BF%E0%A6%9B%E0%A7%81-%E0%A6%AA%E0%A7%9F%E0%A7%87%E0%A6%A8%E0%A7%8D%E0%A6%9F%E0%A6%BF-%E0%A6%AA%E0%A7%9F%E0%A7%87%E0%A6%A8%E0%A7%8D%E0%A6%9F/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="পয়েন্টার নিয়া কিছু পয়েন্টি পয়েন্ট">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-02-21T20:19:18.000Z">2020-02-21</time></div>
+                    <a href="/2020/02/21/%E0%A6%AA%E0%A7%9F%E0%A7%87%E0%A6%A8%E0%A7%8D%E0%A6%9F%E0%A6%BE%E0%A6%B0-%E0%A6%A8%E0%A6%BF%E0%A7%9F%E0%A6%BE-%E0%A6%95%E0%A6%BF%E0%A6%9B%E0%A7%81-%E0%A6%AA%E0%A7%9F%E0%A7%87%E0%A6%A8%E0%A7%8D%E0%A6%9F%E0%A6%BF-%E0%A6%AA%E0%A7%9F%E0%A7%87%E0%A6%A8%E0%A7%8D%E0%A6%9F/" class="title has-link-black-ter is-size-6 has-text-weight-normal">পয়েন্টার নিয়া কিছু পয়েন্টি পয়েন্ট</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/programming/">programming</a> / <a class="has-link-grey -link" href="/categories/programming/cpp/">cpp</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2020/02/12/library-less-node-config-secrets-management/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/img/Screenshot_20200212_024945.png" alt="library-less node config &amp; secrets management">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-02-12T02:27:53.000Z">2020-02-12</time></div>
+                    <a href="/2020/02/12/library-less-node-config-secrets-management/" class="title has-link-black-ter is-size-6 has-text-weight-normal">library-less node config &amp; secrets management</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/nodeJS/">nodeJS</a> / <a class="has-link-grey -link" href="/categories/nodeJS/typescript/">typescript</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2019/12/30/swap-zram-zswap-random-linux-stuffs/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="https://raw.githubusercontent.com/audacioustux/paste/master/Screenshot_20200204_013440.png" alt="swap, zram, zswap, random linux stuffs">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-12-30T10:29:56.000Z">2019-12-30</time></div>
+                    <a href="/2019/12/30/swap-zram-zswap-random-linux-stuffs/" class="title has-link-black-ter is-size-6 has-text-weight-normal">swap, zram, zswap, random linux stuffs</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/linux/">linux</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2019/08/01/50-shades-of-computer-science/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/img/binary_tie.jpg" alt="50 shades of computer science">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-08-01T03:47:00.000Z">2019-08-01</time></div>
+                    <a href="/2019/08/01/50-shades-of-computer-science/" class="title has-link-black-ter is-size-6 has-text-weight-normal">50 shades of computer science</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/%E0%A6%9C%E0%A7%8D%E0%A6%9E%E0%A6%BE%E0%A6%A8%E0%A6%AC%E0%A6%BE%E0%A6%B0%E0%A7%8D%E0%A6%A4%E0%A6%BE/">জ্ঞানবার্তা</a> / <a class="has-link-grey -link" href="/categories/%E0%A6%9C%E0%A7%8D%E0%A6%9E%E0%A6%BE%E0%A6%A8%E0%A6%AC%E0%A6%BE%E0%A6%B0%E0%A7%8D%E0%A6%A4%E0%A6%BE/academic/">academic</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+    </div>
+</div>
+        
+            <div class="card widget">
+    <div class="card-content">
+        <div class="menu">
+        <h3 class="menu-label">
+            Archives
+        </h3>
+        <ul class="menu-list">
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2020/04/">
+                <span class="level-start">
+                    <span class="level-item">April 2020</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2020/02/">
+                <span class="level-start">
+                    <span class="level-item">February 2020</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">2</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2019/12/">
+                <span class="level-start">
+                    <span class="level-item">December 2019</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2019/08/">
+                <span class="level-start">
+                    <span class="level-item">August 2019</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2019/04/">
+                <span class="level-start">
+                    <span class="level-item">April 2019</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2017/05/">
+                <span class="level-start">
+                    <span class="level-item">May 2017</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        </ul>
+        </div>
+    </div>
+</div>
+        
+            <div class="card widget">
+    <div class="card-content">
+        <div class="menu">
+            <h3 class="menu-label">
+                Tags
+            </h3>
+            <div class="field is-grouped is-grouped-multiline">
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/academia/">
+                        <span class="tag">academia</span>
+                        <span class="tag is-grey">2</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/bash/">
+                        <span class="tag">bash</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/brainfuck/">
+                        <span class="tag">brainfuck</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/c/">
+                        <span class="tag">c++</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/chit-chat/">
+                        <span class="tag">chit~chat</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/competitive-programming/">
+                        <span class="tag">competitive programming</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/config/">
+                        <span class="tag">config</span>
+                        <span class="tag is-grey">2</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/development/">
+                        <span class="tag">development</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/esolang/">
+                        <span class="tag">esolang</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/lolcode/">
+                        <span class="tag">lolcode</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/nodeJS/">
+                        <span class="tag">nodeJS</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/piet/">
+                        <span class="tag">piet</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/pointer/">
+                        <span class="tag">pointer</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/proxy/">
+                        <span class="tag">proxy</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/reference/">
+                        <span class="tag">reference</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/resource/">
+                        <span class="tag">resource</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/secrets/">
+                        <span class="tag">secrets</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/tips/">
+                        <span class="tag">tips</span>
+                        <span class="tag is-grey">4</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/tools/">
+                        <span class="tag">tools</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/typescript/">
+                        <span class="tag">typescript</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/zram/">
+                        <span class="tag">zram</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/zswap/">
+                        <span class="tag">zswap</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+</div>
+        
+        </div>
+    
+</div>
+
+                
+
+
+
+
+<div class="column is-4-tablet is-4-desktop is-3-widescreen is-hidden-touch is-hidden-desktop-only has-order-3 column-right ">
+    
+        <div class="card widget">
+    <div class="card-content">
+        <h3 class="menu-label">
+            Recent
+        </h3>
+        
+        <article class="media">
+            
+            <a href="/2020/04/02/Programming-Language-101/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="Programming Language 101">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-04-02T01:56:16.000Z">2020-04-02</time></div>
+                    <a href="/2020/04/02/Programming-Language-101/" class="title has-link-black-ter is-size-6 has-text-weight-normal">Programming Language 101</a>
+                    <p class="is-size-7 is-uppercase">
+                        
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2020/02/21/%E0%A6%AA%E0%A7%9F%E0%A7%87%E0%A6%A8%E0%A7%8D%E0%A6%9F%E0%A6%BE%E0%A6%B0-%E0%A6%A8%E0%A6%BF%E0%A7%9F%E0%A6%BE-%E0%A6%95%E0%A6%BF%E0%A6%9B%E0%A7%81-%E0%A6%AA%E0%A7%9F%E0%A7%87%E0%A6%A8%E0%A7%8D%E0%A6%9F%E0%A6%BF-%E0%A6%AA%E0%A7%9F%E0%A7%87%E0%A6%A8%E0%A7%8D%E0%A6%9F/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="পয়েন্টার নিয়া কিছু পয়েন্টি পয়েন্ট">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-02-21T20:19:18.000Z">2020-02-21</time></div>
+                    <a href="/2020/02/21/%E0%A6%AA%E0%A7%9F%E0%A7%87%E0%A6%A8%E0%A7%8D%E0%A6%9F%E0%A6%BE%E0%A6%B0-%E0%A6%A8%E0%A6%BF%E0%A7%9F%E0%A6%BE-%E0%A6%95%E0%A6%BF%E0%A6%9B%E0%A7%81-%E0%A6%AA%E0%A7%9F%E0%A7%87%E0%A6%A8%E0%A7%8D%E0%A6%9F%E0%A6%BF-%E0%A6%AA%E0%A7%9F%E0%A7%87%E0%A6%A8%E0%A7%8D%E0%A6%9F/" class="title has-link-black-ter is-size-6 has-text-weight-normal">পয়েন্টার নিয়া কিছু পয়েন্টি পয়েন্ট</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/programming/">programming</a> / <a class="has-link-grey -link" href="/categories/programming/cpp/">cpp</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2020/02/12/library-less-node-config-secrets-management/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/img/Screenshot_20200212_024945.png" alt="library-less node config &amp; secrets management">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-02-12T02:27:53.000Z">2020-02-12</time></div>
+                    <a href="/2020/02/12/library-less-node-config-secrets-management/" class="title has-link-black-ter is-size-6 has-text-weight-normal">library-less node config &amp; secrets management</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/nodeJS/">nodeJS</a> / <a class="has-link-grey -link" href="/categories/nodeJS/typescript/">typescript</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2019/12/30/swap-zram-zswap-random-linux-stuffs/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="https://raw.githubusercontent.com/audacioustux/paste/master/Screenshot_20200204_013440.png" alt="swap, zram, zswap, random linux stuffs">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-12-30T10:29:56.000Z">2019-12-30</time></div>
+                    <a href="/2019/12/30/swap-zram-zswap-random-linux-stuffs/" class="title has-link-black-ter is-size-6 has-text-weight-normal">swap, zram, zswap, random linux stuffs</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/linux/">linux</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2019/08/01/50-shades-of-computer-science/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/img/binary_tie.jpg" alt="50 shades of computer science">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-08-01T03:47:00.000Z">2019-08-01</time></div>
+                    <a href="/2019/08/01/50-shades-of-computer-science/" class="title has-link-black-ter is-size-6 has-text-weight-normal">50 shades of computer science</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/%E0%A6%9C%E0%A7%8D%E0%A6%9E%E0%A6%BE%E0%A6%A8%E0%A6%AC%E0%A6%BE%E0%A6%B0%E0%A7%8D%E0%A6%A4%E0%A6%BE/">জ্ঞানবার্তা</a> / <a class="has-link-grey -link" href="/categories/%E0%A6%9C%E0%A7%8D%E0%A6%9E%E0%A6%BE%E0%A6%A8%E0%A6%AC%E0%A6%BE%E0%A6%B0%E0%A7%8D%E0%A6%A4%E0%A6%BE/academic/">academic</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+    </div>
+</div>
+    
+        <div class="card widget">
+    <div class="card-content">
+        <div class="menu">
+        <h3 class="menu-label">
+            Archives
+        </h3>
+        <ul class="menu-list">
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2020/04/">
+                <span class="level-start">
+                    <span class="level-item">April 2020</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2020/02/">
+                <span class="level-start">
+                    <span class="level-item">February 2020</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">2</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2019/12/">
+                <span class="level-start">
+                    <span class="level-item">December 2019</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2019/08/">
+                <span class="level-start">
+                    <span class="level-item">August 2019</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2019/04/">
+                <span class="level-start">
+                    <span class="level-item">April 2019</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2017/05/">
+                <span class="level-start">
+                    <span class="level-item">May 2017</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        </ul>
+        </div>
+    </div>
+</div>
+    
+        <div class="card widget">
+    <div class="card-content">
+        <div class="menu">
+            <h3 class="menu-label">
+                Tags
+            </h3>
+            <div class="field is-grouped is-grouped-multiline">
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/academia/">
+                        <span class="tag">academia</span>
+                        <span class="tag is-grey">2</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/bash/">
+                        <span class="tag">bash</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/brainfuck/">
+                        <span class="tag">brainfuck</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/c/">
+                        <span class="tag">c++</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/chit-chat/">
+                        <span class="tag">chit~chat</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/competitive-programming/">
+                        <span class="tag">competitive programming</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/config/">
+                        <span class="tag">config</span>
+                        <span class="tag is-grey">2</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/development/">
+                        <span class="tag">development</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/esolang/">
+                        <span class="tag">esolang</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/lolcode/">
+                        <span class="tag">lolcode</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/nodeJS/">
+                        <span class="tag">nodeJS</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/piet/">
+                        <span class="tag">piet</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/pointer/">
+                        <span class="tag">pointer</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/proxy/">
+                        <span class="tag">proxy</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/reference/">
+                        <span class="tag">reference</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/resource/">
+                        <span class="tag">resource</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/secrets/">
+                        <span class="tag">secrets</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/tips/">
+                        <span class="tag">tips</span>
+                        <span class="tag is-grey">4</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/tools/">
+                        <span class="tag">tools</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/typescript/">
+                        <span class="tag">typescript</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/zram/">
+                        <span class="tag">zram</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/zswap/">
+                        <span class="tag">zswap</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+</div>
+    
+    
+</div>
+
+            </div>
+        </div>
+    </section>
+    <footer class="footer">
+    <div class="container">
+        <div class="level">
+            <div class="level-start has-text-centered-mobile">
+                <a class="footer-logo is-block has-mb-6" href="/">
+                
+                    <img src="/images/logo.svg" alt="Tanjim Hossain" height="28">
+                
+                </a>
+                <p class="is-size-7">
+                &copy; 2020 Tanjim Hossain&nbsp;
+                Powered by <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a> & <a
+                        href="https://github.com/ppoffice/hexo-theme-icarus" target="_blank" rel="noopener">Icarus</a>
+                
+                </p>
+            </div>
+            <div class="level-end">
+            
+                <div class="field has-addons is-flex-center-mobile has-mt-5-mobile is-flex-wrap is-flex-middle">
+                
+                <p class="control">
+                    <a class="button is-white is-large" target="_blank" rel="noopener" title="Creative Commons" href="https://creativecommons.org/">
+                        
+                        <i class="fab fa-creative-commons"></i>
+                        
+                    </a>
+                </p>
+                
+                <p class="control">
+                    <a class="button is-white is-large" target="_blank" rel="noopener" title="Attribution 4.0 International" href="https://creativecommons.org/licenses/by/4.0/">
+                        
+                        <i class="fab fa-creative-commons-by"></i>
+                        
+                    </a>
+                </p>
+                
+                <p class="control">
+                    <a class="button is-white is-large" target="_blank" rel="noopener" title="Source On Github" href="https://github.com/audacioustux/audacioustux.com">
+                        
+                        <i class="fab fa-github"></i>
+                        
+                    </a>
+                </p>
+                
+                </div>
+            
+            </div>
+        </div>
+    </div>
+</footer>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/moment@2.22.2/min/moment-with-locales.min.js"></script>
+<script>moment.locale("en");</script>
+
+
+<script>
+var IcarusThemeSettings = {
+    site: {
+        url: 'http://audacioustux.com',
+        external_link: {"enable":true,"exclude":[]}
+    },
+    article: {
+        highlight: {
+            clipboard: true,
+            fold: 'unfolded'
+        }
+    }
+};
+</script>
+
+
+<script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.4/dist/clipboard.min.js" defer></script>
+
+
+
+
+
+<script src="/js/animation.js"></script>
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/lightgallery@1.6.8/dist/js/lightgallery.min.js" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/js/jquery.justifiedGallery.min.js" defer></script>
+<script src="/js/gallery.js" defer></script>
+
+
+
+<div id="outdated">
+    <h6>Your browser is out-of-date!</h6>
+    <p>Update your browser to view this website correctly. <a id="btnUpdateBrowser" href="http://outdatedbrowser.com/">Update
+            my browser now </a></p>
+    <p class="last"><a href="#" id="btnCloseUpdateBrowser" title="Close">&times;</a></p>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/outdatedbrowser@1.1.5/outdatedbrowser/outdatedbrowser.min.js" defer></script>
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        outdatedBrowser({
+            bgColor: '#f25648',
+            color: '#ffffff',
+            lowerThan: 'flex'
+        });
+    });
+</script>
+
+
+<script src="https://cdn.jsdelivr.net/npm/mathjax@2.7.5/unpacked/MathJax.js?config=TeX-MML-AM_CHTML" defer></script>
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    MathJax.Hub.Config({
+        'HTML-CSS': {
+            matchFontHeight: false
+        },
+        SVG: {
+            matchFontHeight: false
+        },
+        CommonHTML: {
+            matchFontHeight: false
+        },
+        tex2jax: {
+            inlineMath: [
+                ['$','$'],
+                ['\\(','\\)']
+            ]
+        }
+    });
+});
+</script>
+
+
+<a id="back-to-top" title="Back to Top" href="javascript:;">
+    <i class="fas fa-chevron-up"></i>
+</a>
+<script src="/js/back-to-top.js" defer></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script src="/js/main.js" defer></script>
+
+    
+    <div class="searchbox ins-search">
+    <div class="searchbox-container ins-search-container">
+        <div class="searchbox-input-wrapper">
+            <input type="text" class="searchbox-input ins-search-input" placeholder="Type something..." />
+            <span class="searchbox-close ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="searchbox-result-wrapper ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+    (function (window) {
+        var INSIGHT_CONFIG = {
+            TRANSLATION: {
+                POSTS: 'Posts',
+                PAGES: 'Pages',
+                CATEGORIES: 'Categories',
+                TAGS: 'Tags',
+                UNTITLED: '(Untitled)',
+            },
+            CONTENT_URL: '/content.json',
+        };
+        window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+    })(window);
+</script>
+<script src="/js/insight.js" defer></script>
+<link rel="stylesheet" href="/css/search.css">
+<link rel="stylesheet" href="/css/insight.css">
+    
+</body>
+</html>

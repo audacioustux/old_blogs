@@ -1,0 +1,1330 @@
+<!DOCTYPE html>
+<html  lang="en">
+<head>
+    <meta charset="utf-8" />
+
+<meta name="generator" content="Hexo 4.0.0" />
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+
+<title>Category: linux - Tanjim Hossain</title>
+
+
+
+
+
+
+
+
+<link rel="icon" href="/images/favicon.svg">
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.7.2/css/bulma.css">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Ubuntu:400,600|Source+Code+Pro">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@9.12.0/styles/atom-one-light.css">
+
+
+    
+    
+<style>body>.footer,body>.navbar,body>.section{opacity:0}</style>
+
+    
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@1.6.8/dist/css/lightgallery.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/css/justifiedGallery.min.css">
+
+    
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/outdatedbrowser@1.1.5/outdatedbrowser/outdatedbrowser.min.css">
+
+    
+    
+    
+    
+<link rel="stylesheet" href="/css/back-to-top.css">
+
+    
+    
+    
+    
+    
+    
+    
+    <link rel="stylesheet" href="/css/progressbar.css">
+<script src="https://cdn.jsdelivr.net/npm/pace-js@1.0.2/pace.min.js"></script>
+    
+    
+    
+
+
+<link rel="stylesheet" href="/css/style.css">
+</head>
+<body class="is-3-column">
+    <nav class="navbar navbar-main">
+    <div class="container">
+        <div class="navbar-brand is-flex-center">
+            <a class="navbar-item navbar-logo" href="/">
+            
+                <img src="/images/logo.svg" alt="Tanjim Hossain" height="28">
+            
+            </a>
+        </div>
+        <div class="navbar-menu">
+            
+            <div class="navbar-start">
+                
+                <a class="navbar-item"
+                href="/">Home</a>
+                
+                <a class="navbar-item"
+                href="/archives">Archives</a>
+                
+                <a class="navbar-item"
+                href="/categories">Categories</a>
+                
+                <a class="navbar-item"
+                href="/tags">Tags</a>
+                
+            </div>
+            
+            <div class="navbar-end">
+                
+                    
+                    <a class="navbar-item" target="_blank" rel="noopener" title="Github @audacioustux" href="https://github.com/audacioustux">
+                        
+                        <i class="fab fa-github"></i>
+                        
+                    </a>
+                    
+                
+                
+                
+                <a class="navbar-item search" title="Search" href="javascript:;">
+                    <i class="fas fa-search"></i>
+                </a>
+                
+            </div>
+        </div>
+    </div>
+</nav>
+    
+    <section class="section">
+        <div class="container">
+            <div class="columns">
+                <div class="column is-8-tablet is-8-desktop is-6-widescreen has-order-2 column-main"><div class="card">
+    <div class="card-content">
+        <nav class="breadcrumb" aria-label="breadcrumbs">
+        <ul>
+            <li><a href="/categories">Categories</a></li>
+            
+            <li class="is-active"><a href="#" aria-current="page">linux</a></li>
+        </ul>
+        </nav>
+    </div>
+</div>
+
+    
+<div class="card">
+    
+    <div class="card-image">
+        <a href="/2019/12/30/swap-zram-zswap-random-linux-stuffs/" class="image is-7by1">
+            <img class="thumbnail" src="https://raw.githubusercontent.com/audacioustux/paste/master/Screenshot_20200204_013440.png" alt="swap, zram, zswap, random linux stuffs">
+        </a>
+    </div>
+    
+    <div class="card-content article ">
+        
+        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
+            <div class="level-left">
+                <time class="level-item has-text-grey" datetime="2019-12-30T10:29:56.000Z">2019-12-30</time>
+                
+                <div class="level-item">
+                <a class="has-link-grey -link" href="/categories/linux/">linux</a>
+                </div>
+                
+                
+                <span class="level-item has-text-grey">
+                    
+                    
+                    7 minutes read (About 1114 words)
+                </span>
+                
+                
+            </div>
+        </div>
+        
+        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
+            
+                <a class="has-link-black-ter" href="/2019/12/30/swap-zram-zswap-random-linux-stuffs/">swap, zram, zswap, random linux stuffs</a>
+            
+        </h1>
+        <div class="content">
+            <h4 id="context-Linux-Bangladesh-facebook-group"><a href="#context-Linux-Bangladesh-facebook-group" class="headerlink" title="context: Linux Bangladesh facebook group"></a><strong>context</strong>: <code>Linux Bangladesh</code> facebook group</h4><hr>
+<ol>
+<li><h4 id="swap-swapfile-zswap-zram"><a href="#swap-swapfile-zswap-zram" class="headerlink" title="swap, swapfile, zswap, zram"></a><strong>swap, swapfile, zswap, zram</strong></h4>র‍্যাম যতই হোক, almost-always-add-swap-space - <a href="https://haydenjames.io/linux-performance-almost-always-add-swap-space/">https://haydenjames.io/linux-performance-almost-always-add-swap-space/</a></li>
+</ol>
+<h5 id="কিন্তু-কত-GB"><a href="#কিন্তু-কত-GB" class="headerlink" title="কিন্তু কত GB?"></a><strong>কিন্তু কত GB?</strong></h5><ul>
+<li>hibernate (suspend on disk) ফিচার চাইলে র‍্যামের সাইজ + ১ জিবি</li>
+<li>যদি হাইবারনেট করার চিন্তা ভাবনা না থাকে:<ul>
+<li>hdd হইলে: দরকার নাই (পরে কাহিনী খুলে বলতেছি)</li>
+<li>ssd হইলে: 1 GB</li>
+</ul>
+</li>
+</ul>
+<h5 id="ক্যামনে-বানাবো"><a href="#ক্যামনে-বানাবো" class="headerlink" title="ক্যামনে বানাবো?"></a><strong>ক্যামনে বানাবো?</strong></h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$ sudo su</span><br><span class="line">$ dd if=/dev/zero of=/swapfile1 bs=1G count=&lt;swap_size&gt;</span><br><span class="line">$ chown root:root /swapfile1; chmod 0600 /swapfile1</span><br><span class="line">$ mkswap /swapfile1; swapon /swapfile1</span><br><span class="line">$ echo &quot;/swapfile1 none swap sw 0 0&quot; &gt;&gt; /etc/fstab</span><br></pre></td></tr></table></figure>
+<p>explanation: 1) switch to root user, 2) হিউজ একখান ফাইল, যাতে কোনো হোল নাই -_- replace <code>&lt;swap_size&gt;</code> with যত জিবি সোয়াপ চান (ex: 1,2,3…) 3) set permission for the file 4) file টাকে সোয়াপ হিসাবে ব্যবহার উপযোগী করার জন্যে 5) swapfile টা প্রতি স্টার্টাপে অটোম্যাটিকালি সোয়াপ হিসাবে মাউন্ট করার জন্যে…</p>
+<h5 id="zswap-zram-কিতা"><a href="#zswap-zram-কিতা" class="headerlink" title="zswap, zram কিতা?"></a>zswap, zram কিতা?</h5><p>সোয়াপ আসলে কি হয়? </p>
+<pre><code>&quot;memory pages which are hardly ever used&quot; </code></pre><p>তো সেই মেমোরি swapfile এ না রেখে মেমোরীতেই কম্প্রেস কইরা রাখলেই তো হয় 🤔 সুবিধা? hdd/ssd র‍্যামের থেকে অনেকটা স্লো। হার্ডলি এভার ইউজ্ড মানেতো এই না যে কখনোই ব্যবহার হবেনা? আর যদি র‍্যাম অনেকটা ব্যবহার হয়ে যায়, তখন যাস্ট কিছুটা কম ব্যবহার হইতেছে এমন মেমোরীও সোয়াপ হয়ে যাইতে পারে। কম্প্রেস করে র‍্যামেই রেখে দিলে ram এর একটা অংশ সোয়াপ স্টোরেজের মত কাজ করতেছে 😌 zswap, zram এর কাহিনী ইহাই :)<br>zswap কম্প্রেস করে মেমোরিতেই রাখতেছে, কিন্তু যখন মেমোরিও ফুল হয়ে যাওয়া শুরু করবে, মেমোরিতে কম্প্রেস হওয়া ডাটা আসল সোয়াপ স্টোরেজে মুভ করা শুরু করবে…<br>zram এর ক্ষেত্রে মুভের কোনো কাহিনী নাই :) বাকিসব zswap এর মতই। তো zram এর সাথে swapfile/partition রেখে লাভ নাই।</p>
+<h5 id="তো-কখন-কোনটা-zram-or-zwap"><a href="#তো-কখন-কোনটা-zram-or-zwap" class="headerlink" title="তো কখন কোনটা? zram or zwap?"></a><strong>তো কখন কোনটা? zram or zwap?</strong></h5><p>hdd হইলে যাস্ট zram. ssd হইলে zswap 👌<br>এর জন্যেই একেবারে প্রথমে বলছিলাম hdd তে swap এর দরকার নাই।</p>
+<h5 id="কিন্তু-ক্যামনে"><a href="#কিন্তু-ক্যামনে" class="headerlink" title="কিন্তু ক্যামনে?"></a><strong>কিন্তু ক্যামনে?</strong></h5><p>একেক ডিস্ট্রোতে একেকভাবে zram, zwap enable করে। manjaro, pop_os এই দুইটার টা কমেন্টে দিতেছি</p>
+<ol start="2">
+<li><h4 id="personal-preference"><a href="#personal-preference" class="headerlink" title="personal preference:"></a><strong>personal preference:</strong></h4></li>
+</ol>
+<p><strong>distro</strong>: manjaro kde<br><strong>package manager</strong>: snap -&gt; flatpak -&gt; pacman -&gt; yay<br><strong>terminal emulator</strong>: অনেক অনেক ঘুরাঘুরির পর kitty ( <a href="https://github.com/kovidgoyal/kitty">https://github.com/kovidgoyal/kitty</a> ) তে শান্তি পাইলাম.<br><strong>config</strong>: <a href="https://gist.github.com/audacioustux/4967b2c6d25a004c394455a95f676508">https://gist.github.com/audacioustux/4967b2c6d25a004c394455a95f676508</a> (follow the README file)<br><strong>shell</strong>: zsh with starship config: ^<br><strong>terminal</strong> editor: emacs with spacemacs<br><strong>config</strong>: <a href="https://gist.github.com/audacioustux/1d4aea266047e3efec5f4796441ae1af">https://gist.github.com/audacioustux/1d4aea266047e3efec5f4796441ae1af</a></p>
+<ol start="3">
+<li><h4 id="tools"><a href="#tools" class="headerlink" title="tools:"></a><strong>tools:</strong></h4></li>
+</ol>
+<p><strong>ripgrep (like grep)</strong>: <a href="https://github.com/BurntSushi/ripgrep">https://github.com/BurntSushi/ripgrep</a><br><strong>bat (like cat)</strong>: <a href="https://github.com/sharkdp/bat">https://github.com/sharkdp/bat</a><br><strong>fkill</strong>: <a href="https://github.com/sindresorhus/fkill-cli">https://github.com/sindresorhus/fkill-cli</a><br><strong>fd (like find)</strong>: <a href="https://github.com/sharkdp/fd">https://github.com/sharkdp/fd</a><br><strong>ag(like ack)</strong>: <a href="https://github.com/ggreer/the_silver_searcher">https://github.com/ggreer/the_silver_searcher</a></p>
+
+        </div>
+        
+        
+        
+    </div>
+</div>
+
+
+
+
+
+
+
+
+</div>
+                
+
+
+
+
+<div class="column is-4-tablet is-4-desktop is-3-widescreen  has-order-1 column-left ">
+    
+        
+<div class="card widget">
+    <div class="card-content">
+        <nav class="level">
+            <div class="level-item has-text-centered" style="flex-shrink: 1">
+                <div>
+                    
+                    <figure class="image is-128x128 has-mb-6">
+                        <img class="is-rounded" src="https://raw.githubusercontent.com/audacioustux/paste/master/7238675.jpg" alt="Tanjim Hossain">
+                    </figure>
+                    
+                    <p class="is-size-4 is-block">
+                        Tanjim Hossain
+                    </p>
+                    
+                    
+                    <p class="is-size-6 is-block">
+                        Audacious Tux
+                    </p>
+                    
+                    
+                    <p class="is-size-6 is-flex is-flex-center has-text-grey">
+                        <i class="fas fa-map-marker-alt has-mr-7"></i>
+                        <span>Dhaka, Bangladesh</span>
+                    </p>
+                    
+                </div>
+            </div>
+        </nav>
+        <nav class="level is-mobile">
+            <div class="level-item has-text-centered is-marginless">
+                <div>
+                    <p class="heading">
+                        Posts
+                    </p>
+                    <a href="/archives">
+                        <p class="title has-text-weight-normal">
+                            7
+                        </p>
+                    </a>
+                </div>
+            </div>
+            <div class="level-item has-text-centered is-marginless">
+                <div>
+                    <p class="heading">
+                        Categories
+                    </p>
+                    <a href="/categories">
+                        <p class="title has-text-weight-normal">
+                            8
+                        </p>
+                    </a>
+                </div>
+            </div>
+            <div class="level-item has-text-centered is-marginless">
+                <div>
+                    <p class="heading">
+                        Tags
+                    </p>
+                    <a href="/tags">
+                        <p class="title has-text-weight-normal">
+                            22
+                        </p>
+                    </a>
+                </div>
+            </div>
+        </nav>
+        
+        <div class="level">
+            <a class="level-item button is-link is-rounded" href="https://github.com/audacioustux" target="_blank" rel="noopener">
+                Follow</a>
+        </div>
+        
+        
+        
+        <div class="level is-mobile">
+            
+            <a class="level-item button is-white is-marginless" target="_blank" rel="noopener"
+                title="Github" href="https://github.com/audacioustux">
+                
+                <i class="fab fa-github"></i>
+                
+            </a>
+            
+            <a class="level-item button is-white is-marginless" target="_blank" rel="noopener"
+                title="Facebook" href="https://facebook.com/htanjim">
+                
+                <i class="fab fa-facebook"></i>
+                
+            </a>
+            
+            <a class="level-item button is-white is-marginless" target="_blank" rel="noopener"
+                title="Telegram" href="https://t.me/audacioustux">
+                
+                <i class="fab fa-telegram-plane"></i>
+                
+            </a>
+            
+        </div>
+        
+    </div>
+</div>
+    
+        
+    
+        <div class="card widget">
+    <div class="card-content">
+        <div class="menu">
+        <h3 class="menu-label">
+            Links
+        </h3>
+        <ul class="menu-list">
+        
+            <li>
+                <a class="level is-mobile" href="https://wiki.ubuntu.com/tanjim" target="_blank" rel="noopener">
+                    <span class="level-left">
+                        <span class="level-item">wiki</span>
+                    </span>
+                    <span class="level-right">
+                        <span class="level-item tag">wiki.ubuntu.com</span>
+                    </span>
+                </a>
+            </li>
+        
+        </ul>
+        </div>
+    </div>
+</div>
+
+    
+        
+<div class="card widget">
+    <div class="card-content">
+        <div class="menu">
+            <h3 class="menu-label">
+                Categories
+            </h3>
+            <ul class="menu-list">
+            <li>
+        <a class="level is-marginless" href="/categories/linux/">
+            <span class="level-start">
+                <span class="level-item">linux</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">1</span>
+            </span>
+        </a></li><li>
+        <a class="level is-marginless" href="/categories/nodeJS/">
+            <span class="level-start">
+                <span class="level-item">nodeJS</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">1</span>
+            </span>
+        </a><ul><li>
+        <a class="level is-marginless" href="/categories/nodeJS/typescript/">
+            <span class="level-start">
+                <span class="level-item">typescript</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">1</span>
+            </span>
+        </a></li></ul></li><li>
+        <a class="level is-marginless" href="/categories/programming/">
+            <span class="level-start">
+                <span class="level-item">programming</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">2</span>
+            </span>
+        </a><ul><li>
+        <a class="level is-marginless" href="/categories/programming/cpp/">
+            <span class="level-start">
+                <span class="level-item">cpp</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">1</span>
+            </span>
+        </a></li><li>
+        <a class="level is-marginless" href="/categories/programming/esolang/">
+            <span class="level-start">
+                <span class="level-item">esolang</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">1</span>
+            </span>
+        </a></li></ul></li><li>
+        <a class="level is-marginless" href="/categories/%E0%A6%9C%E0%A7%8D%E0%A6%9E%E0%A6%BE%E0%A6%A8%E0%A6%AC%E0%A6%BE%E0%A6%B0%E0%A7%8D%E0%A6%A4%E0%A6%BE/">
+            <span class="level-start">
+                <span class="level-item">জ্ঞানবার্তা</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">2</span>
+            </span>
+        </a><ul><li>
+        <a class="level is-marginless" href="/categories/%E0%A6%9C%E0%A7%8D%E0%A6%9E%E0%A6%BE%E0%A6%A8%E0%A6%AC%E0%A6%BE%E0%A6%B0%E0%A7%8D%E0%A6%A4%E0%A6%BE/academic/">
+            <span class="level-start">
+                <span class="level-item">academic</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">2</span>
+            </span>
+        </a></li></ul></li>
+            </ul>
+        </div>
+    </div>
+</div>
+    
+        <div class="card widget">
+    <div class="card-content">
+        <h3 class="menu-label">
+            Tag Cloud
+        </h3>
+        <a href="/tags/academia/" style="font-size: 15px;">academia</a> <a href="/tags/bash/" style="font-size: 10px;">bash</a> <a href="/tags/brainfuck/" style="font-size: 10px;">brainfuck</a> <a href="/tags/c/" style="font-size: 10px;">c++</a> <a href="/tags/chit-chat/" style="font-size: 10px;">chit~chat</a> <a href="/tags/competitive-programming/" style="font-size: 10px;">competitive programming</a> <a href="/tags/config/" style="font-size: 15px;">config</a> <a href="/tags/development/" style="font-size: 10px;">development</a> <a href="/tags/esolang/" style="font-size: 10px;">esolang</a> <a href="/tags/lolcode/" style="font-size: 10px;">lolcode</a> <a href="/tags/nodeJS/" style="font-size: 10px;">nodeJS</a> <a href="/tags/piet/" style="font-size: 10px;">piet</a> <a href="/tags/pointer/" style="font-size: 10px;">pointer</a> <a href="/tags/proxy/" style="font-size: 10px;">proxy</a> <a href="/tags/reference/" style="font-size: 10px;">reference</a> <a href="/tags/resource/" style="font-size: 10px;">resource</a> <a href="/tags/secrets/" style="font-size: 10px;">secrets</a> <a href="/tags/tips/" style="font-size: 20px;">tips</a> <a href="/tags/tools/" style="font-size: 10px;">tools</a> <a href="/tags/typescript/" style="font-size: 10px;">typescript</a> <a href="/tags/zram/" style="font-size: 10px;">zram</a> <a href="/tags/zswap/" style="font-size: 10px;">zswap</a>
+    </div>
+</div>
+    
+    
+        <div class="column-right-shadow is-hidden-widescreen ">
+        
+            <div class="card widget">
+    <div class="card-content">
+        <h3 class="menu-label">
+            Recent
+        </h3>
+        
+        <article class="media">
+            
+            <a href="/2020/04/02/Programming-Language-101/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="Programming Language 101">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-04-02T01:56:16.000Z">2020-04-02</time></div>
+                    <a href="/2020/04/02/Programming-Language-101/" class="title has-link-black-ter is-size-6 has-text-weight-normal">Programming Language 101</a>
+                    <p class="is-size-7 is-uppercase">
+                        
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2020/02/21/%E0%A6%AA%E0%A7%9F%E0%A7%87%E0%A6%A8%E0%A7%8D%E0%A6%9F%E0%A6%BE%E0%A6%B0-%E0%A6%A8%E0%A6%BF%E0%A7%9F%E0%A6%BE-%E0%A6%95%E0%A6%BF%E0%A6%9B%E0%A7%81-%E0%A6%AA%E0%A7%9F%E0%A7%87%E0%A6%A8%E0%A7%8D%E0%A6%9F%E0%A6%BF-%E0%A6%AA%E0%A7%9F%E0%A7%87%E0%A6%A8%E0%A7%8D%E0%A6%9F/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="পয়েন্টার নিয়া কিছু পয়েন্টি পয়েন্ট">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-02-21T20:19:18.000Z">2020-02-21</time></div>
+                    <a href="/2020/02/21/%E0%A6%AA%E0%A7%9F%E0%A7%87%E0%A6%A8%E0%A7%8D%E0%A6%9F%E0%A6%BE%E0%A6%B0-%E0%A6%A8%E0%A6%BF%E0%A7%9F%E0%A6%BE-%E0%A6%95%E0%A6%BF%E0%A6%9B%E0%A7%81-%E0%A6%AA%E0%A7%9F%E0%A7%87%E0%A6%A8%E0%A7%8D%E0%A6%9F%E0%A6%BF-%E0%A6%AA%E0%A7%9F%E0%A7%87%E0%A6%A8%E0%A7%8D%E0%A6%9F/" class="title has-link-black-ter is-size-6 has-text-weight-normal">পয়েন্টার নিয়া কিছু পয়েন্টি পয়েন্ট</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/programming/">programming</a> / <a class="has-link-grey -link" href="/categories/programming/cpp/">cpp</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2020/02/12/library-less-node-config-secrets-management/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/img/Screenshot_20200212_024945.png" alt="library-less node config &amp; secrets management">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-02-12T02:27:53.000Z">2020-02-12</time></div>
+                    <a href="/2020/02/12/library-less-node-config-secrets-management/" class="title has-link-black-ter is-size-6 has-text-weight-normal">library-less node config &amp; secrets management</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/nodeJS/">nodeJS</a> / <a class="has-link-grey -link" href="/categories/nodeJS/typescript/">typescript</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2019/12/30/swap-zram-zswap-random-linux-stuffs/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="https://raw.githubusercontent.com/audacioustux/paste/master/Screenshot_20200204_013440.png" alt="swap, zram, zswap, random linux stuffs">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-12-30T10:29:56.000Z">2019-12-30</time></div>
+                    <a href="/2019/12/30/swap-zram-zswap-random-linux-stuffs/" class="title has-link-black-ter is-size-6 has-text-weight-normal">swap, zram, zswap, random linux stuffs</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/linux/">linux</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2019/08/01/50-shades-of-computer-science/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/img/binary_tie.jpg" alt="50 shades of computer science">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-08-01T03:47:00.000Z">2019-08-01</time></div>
+                    <a href="/2019/08/01/50-shades-of-computer-science/" class="title has-link-black-ter is-size-6 has-text-weight-normal">50 shades of computer science</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/%E0%A6%9C%E0%A7%8D%E0%A6%9E%E0%A6%BE%E0%A6%A8%E0%A6%AC%E0%A6%BE%E0%A6%B0%E0%A7%8D%E0%A6%A4%E0%A6%BE/">জ্ঞানবার্তা</a> / <a class="has-link-grey -link" href="/categories/%E0%A6%9C%E0%A7%8D%E0%A6%9E%E0%A6%BE%E0%A6%A8%E0%A6%AC%E0%A6%BE%E0%A6%B0%E0%A7%8D%E0%A6%A4%E0%A6%BE/academic/">academic</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+    </div>
+</div>
+        
+            <div class="card widget">
+    <div class="card-content">
+        <div class="menu">
+        <h3 class="menu-label">
+            Archives
+        </h3>
+        <ul class="menu-list">
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2020/04/">
+                <span class="level-start">
+                    <span class="level-item">April 2020</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2020/02/">
+                <span class="level-start">
+                    <span class="level-item">February 2020</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">2</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2019/12/">
+                <span class="level-start">
+                    <span class="level-item">December 2019</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2019/08/">
+                <span class="level-start">
+                    <span class="level-item">August 2019</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2019/04/">
+                <span class="level-start">
+                    <span class="level-item">April 2019</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2017/05/">
+                <span class="level-start">
+                    <span class="level-item">May 2017</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        </ul>
+        </div>
+    </div>
+</div>
+        
+            <div class="card widget">
+    <div class="card-content">
+        <div class="menu">
+            <h3 class="menu-label">
+                Tags
+            </h3>
+            <div class="field is-grouped is-grouped-multiline">
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/academia/">
+                        <span class="tag">academia</span>
+                        <span class="tag is-grey">2</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/bash/">
+                        <span class="tag">bash</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/brainfuck/">
+                        <span class="tag">brainfuck</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/c/">
+                        <span class="tag">c++</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/chit-chat/">
+                        <span class="tag">chit~chat</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/competitive-programming/">
+                        <span class="tag">competitive programming</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/config/">
+                        <span class="tag">config</span>
+                        <span class="tag is-grey">2</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/development/">
+                        <span class="tag">development</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/esolang/">
+                        <span class="tag">esolang</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/lolcode/">
+                        <span class="tag">lolcode</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/nodeJS/">
+                        <span class="tag">nodeJS</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/piet/">
+                        <span class="tag">piet</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/pointer/">
+                        <span class="tag">pointer</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/proxy/">
+                        <span class="tag">proxy</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/reference/">
+                        <span class="tag">reference</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/resource/">
+                        <span class="tag">resource</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/secrets/">
+                        <span class="tag">secrets</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/tips/">
+                        <span class="tag">tips</span>
+                        <span class="tag is-grey">4</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/tools/">
+                        <span class="tag">tools</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/typescript/">
+                        <span class="tag">typescript</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/zram/">
+                        <span class="tag">zram</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/zswap/">
+                        <span class="tag">zswap</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+</div>
+        
+        </div>
+    
+</div>
+
+                
+
+
+
+
+<div class="column is-4-tablet is-4-desktop is-3-widescreen is-hidden-touch is-hidden-desktop-only has-order-3 column-right ">
+    
+        <div class="card widget">
+    <div class="card-content">
+        <h3 class="menu-label">
+            Recent
+        </h3>
+        
+        <article class="media">
+            
+            <a href="/2020/04/02/Programming-Language-101/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="Programming Language 101">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-04-02T01:56:16.000Z">2020-04-02</time></div>
+                    <a href="/2020/04/02/Programming-Language-101/" class="title has-link-black-ter is-size-6 has-text-weight-normal">Programming Language 101</a>
+                    <p class="is-size-7 is-uppercase">
+                        
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2020/02/21/%E0%A6%AA%E0%A7%9F%E0%A7%87%E0%A6%A8%E0%A7%8D%E0%A6%9F%E0%A6%BE%E0%A6%B0-%E0%A6%A8%E0%A6%BF%E0%A7%9F%E0%A6%BE-%E0%A6%95%E0%A6%BF%E0%A6%9B%E0%A7%81-%E0%A6%AA%E0%A7%9F%E0%A7%87%E0%A6%A8%E0%A7%8D%E0%A6%9F%E0%A6%BF-%E0%A6%AA%E0%A7%9F%E0%A7%87%E0%A6%A8%E0%A7%8D%E0%A6%9F/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="পয়েন্টার নিয়া কিছু পয়েন্টি পয়েন্ট">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-02-21T20:19:18.000Z">2020-02-21</time></div>
+                    <a href="/2020/02/21/%E0%A6%AA%E0%A7%9F%E0%A7%87%E0%A6%A8%E0%A7%8D%E0%A6%9F%E0%A6%BE%E0%A6%B0-%E0%A6%A8%E0%A6%BF%E0%A7%9F%E0%A6%BE-%E0%A6%95%E0%A6%BF%E0%A6%9B%E0%A7%81-%E0%A6%AA%E0%A7%9F%E0%A7%87%E0%A6%A8%E0%A7%8D%E0%A6%9F%E0%A6%BF-%E0%A6%AA%E0%A7%9F%E0%A7%87%E0%A6%A8%E0%A7%8D%E0%A6%9F/" class="title has-link-black-ter is-size-6 has-text-weight-normal">পয়েন্টার নিয়া কিছু পয়েন্টি পয়েন্ট</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/programming/">programming</a> / <a class="has-link-grey -link" href="/categories/programming/cpp/">cpp</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2020/02/12/library-less-node-config-secrets-management/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/img/Screenshot_20200212_024945.png" alt="library-less node config &amp; secrets management">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-02-12T02:27:53.000Z">2020-02-12</time></div>
+                    <a href="/2020/02/12/library-less-node-config-secrets-management/" class="title has-link-black-ter is-size-6 has-text-weight-normal">library-less node config &amp; secrets management</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/nodeJS/">nodeJS</a> / <a class="has-link-grey -link" href="/categories/nodeJS/typescript/">typescript</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2019/12/30/swap-zram-zswap-random-linux-stuffs/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="https://raw.githubusercontent.com/audacioustux/paste/master/Screenshot_20200204_013440.png" alt="swap, zram, zswap, random linux stuffs">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-12-30T10:29:56.000Z">2019-12-30</time></div>
+                    <a href="/2019/12/30/swap-zram-zswap-random-linux-stuffs/" class="title has-link-black-ter is-size-6 has-text-weight-normal">swap, zram, zswap, random linux stuffs</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/linux/">linux</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2019/08/01/50-shades-of-computer-science/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/img/binary_tie.jpg" alt="50 shades of computer science">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-08-01T03:47:00.000Z">2019-08-01</time></div>
+                    <a href="/2019/08/01/50-shades-of-computer-science/" class="title has-link-black-ter is-size-6 has-text-weight-normal">50 shades of computer science</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/%E0%A6%9C%E0%A7%8D%E0%A6%9E%E0%A6%BE%E0%A6%A8%E0%A6%AC%E0%A6%BE%E0%A6%B0%E0%A7%8D%E0%A6%A4%E0%A6%BE/">জ্ঞানবার্তা</a> / <a class="has-link-grey -link" href="/categories/%E0%A6%9C%E0%A7%8D%E0%A6%9E%E0%A6%BE%E0%A6%A8%E0%A6%AC%E0%A6%BE%E0%A6%B0%E0%A7%8D%E0%A6%A4%E0%A6%BE/academic/">academic</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+    </div>
+</div>
+    
+        <div class="card widget">
+    <div class="card-content">
+        <div class="menu">
+        <h3 class="menu-label">
+            Archives
+        </h3>
+        <ul class="menu-list">
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2020/04/">
+                <span class="level-start">
+                    <span class="level-item">April 2020</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2020/02/">
+                <span class="level-start">
+                    <span class="level-item">February 2020</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">2</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2019/12/">
+                <span class="level-start">
+                    <span class="level-item">December 2019</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2019/08/">
+                <span class="level-start">
+                    <span class="level-item">August 2019</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2019/04/">
+                <span class="level-start">
+                    <span class="level-item">April 2019</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2017/05/">
+                <span class="level-start">
+                    <span class="level-item">May 2017</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        </ul>
+        </div>
+    </div>
+</div>
+    
+        <div class="card widget">
+    <div class="card-content">
+        <div class="menu">
+            <h3 class="menu-label">
+                Tags
+            </h3>
+            <div class="field is-grouped is-grouped-multiline">
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/academia/">
+                        <span class="tag">academia</span>
+                        <span class="tag is-grey">2</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/bash/">
+                        <span class="tag">bash</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/brainfuck/">
+                        <span class="tag">brainfuck</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/c/">
+                        <span class="tag">c++</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/chit-chat/">
+                        <span class="tag">chit~chat</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/competitive-programming/">
+                        <span class="tag">competitive programming</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/config/">
+                        <span class="tag">config</span>
+                        <span class="tag is-grey">2</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/development/">
+                        <span class="tag">development</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/esolang/">
+                        <span class="tag">esolang</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/lolcode/">
+                        <span class="tag">lolcode</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/nodeJS/">
+                        <span class="tag">nodeJS</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/piet/">
+                        <span class="tag">piet</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/pointer/">
+                        <span class="tag">pointer</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/proxy/">
+                        <span class="tag">proxy</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/reference/">
+                        <span class="tag">reference</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/resource/">
+                        <span class="tag">resource</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/secrets/">
+                        <span class="tag">secrets</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/tips/">
+                        <span class="tag">tips</span>
+                        <span class="tag is-grey">4</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/tools/">
+                        <span class="tag">tools</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/typescript/">
+                        <span class="tag">typescript</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/zram/">
+                        <span class="tag">zram</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/zswap/">
+                        <span class="tag">zswap</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+</div>
+    
+    
+</div>
+
+            </div>
+        </div>
+    </section>
+    <footer class="footer">
+    <div class="container">
+        <div class="level">
+            <div class="level-start has-text-centered-mobile">
+                <a class="footer-logo is-block has-mb-6" href="/">
+                
+                    <img src="/images/logo.svg" alt="Tanjim Hossain" height="28">
+                
+                </a>
+                <p class="is-size-7">
+                &copy; 2020 Tanjim Hossain&nbsp;
+                Powered by <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a> & <a
+                        href="https://github.com/ppoffice/hexo-theme-icarus" target="_blank" rel="noopener">Icarus</a>
+                
+                </p>
+            </div>
+            <div class="level-end">
+            
+                <div class="field has-addons is-flex-center-mobile has-mt-5-mobile is-flex-wrap is-flex-middle">
+                
+                <p class="control">
+                    <a class="button is-white is-large" target="_blank" rel="noopener" title="Creative Commons" href="https://creativecommons.org/">
+                        
+                        <i class="fab fa-creative-commons"></i>
+                        
+                    </a>
+                </p>
+                
+                <p class="control">
+                    <a class="button is-white is-large" target="_blank" rel="noopener" title="Attribution 4.0 International" href="https://creativecommons.org/licenses/by/4.0/">
+                        
+                        <i class="fab fa-creative-commons-by"></i>
+                        
+                    </a>
+                </p>
+                
+                <p class="control">
+                    <a class="button is-white is-large" target="_blank" rel="noopener" title="Source On Github" href="https://github.com/audacioustux/audacioustux.com">
+                        
+                        <i class="fab fa-github"></i>
+                        
+                    </a>
+                </p>
+                
+                </div>
+            
+            </div>
+        </div>
+    </div>
+</footer>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/moment@2.22.2/min/moment-with-locales.min.js"></script>
+<script>moment.locale("en");</script>
+
+
+<script>
+var IcarusThemeSettings = {
+    site: {
+        url: 'http://audacioustux.com',
+        external_link: {"enable":true,"exclude":[]}
+    },
+    article: {
+        highlight: {
+            clipboard: true,
+            fold: 'unfolded'
+        }
+    }
+};
+</script>
+
+
+<script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.4/dist/clipboard.min.js" defer></script>
+
+
+
+
+
+<script src="/js/animation.js"></script>
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/lightgallery@1.6.8/dist/js/lightgallery.min.js" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/js/jquery.justifiedGallery.min.js" defer></script>
+<script src="/js/gallery.js" defer></script>
+
+
+
+<div id="outdated">
+    <h6>Your browser is out-of-date!</h6>
+    <p>Update your browser to view this website correctly. <a id="btnUpdateBrowser" href="http://outdatedbrowser.com/">Update
+            my browser now </a></p>
+    <p class="last"><a href="#" id="btnCloseUpdateBrowser" title="Close">&times;</a></p>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/outdatedbrowser@1.1.5/outdatedbrowser/outdatedbrowser.min.js" defer></script>
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        outdatedBrowser({
+            bgColor: '#f25648',
+            color: '#ffffff',
+            lowerThan: 'flex'
+        });
+    });
+</script>
+
+
+<script src="https://cdn.jsdelivr.net/npm/mathjax@2.7.5/unpacked/MathJax.js?config=TeX-MML-AM_CHTML" defer></script>
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    MathJax.Hub.Config({
+        'HTML-CSS': {
+            matchFontHeight: false
+        },
+        SVG: {
+            matchFontHeight: false
+        },
+        CommonHTML: {
+            matchFontHeight: false
+        },
+        tex2jax: {
+            inlineMath: [
+                ['$','$'],
+                ['\\(','\\)']
+            ]
+        }
+    });
+});
+</script>
+
+
+<a id="back-to-top" title="Back to Top" href="javascript:;">
+    <i class="fas fa-chevron-up"></i>
+</a>
+<script src="/js/back-to-top.js" defer></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script src="/js/main.js" defer></script>
+
+    
+    <div class="searchbox ins-search">
+    <div class="searchbox-container ins-search-container">
+        <div class="searchbox-input-wrapper">
+            <input type="text" class="searchbox-input ins-search-input" placeholder="Type something..." />
+            <span class="searchbox-close ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="searchbox-result-wrapper ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+    (function (window) {
+        var INSIGHT_CONFIG = {
+            TRANSLATION: {
+                POSTS: 'Posts',
+                PAGES: 'Pages',
+                CATEGORIES: 'Categories',
+                TAGS: 'Tags',
+                UNTITLED: '(Untitled)',
+            },
+            CONTENT_URL: '/content.json',
+        };
+        window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+    })(window);
+</script>
+<script src="/js/insight.js" defer></script>
+<link rel="stylesheet" href="/css/search.css">
+<link rel="stylesheet" href="/css/insight.css">
+    
+</body>
+</html>
