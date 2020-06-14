@@ -1,0 +1,193 @@
+# Hexo Configuration
+## Docs: https://hexo.io/docs/configuration.html
+## Source: https://github.com/hexojs/hexo/
+
+# Site
+title: Tanjim Hossain
+subtitle: "Diary of Audacious Tux"
+description: "Just a place to archive my arbitary shits!"
+author: Tanjim Hossain
+language: en
+
+# URL
+## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
+url: http://audacioustux.com
+root: /
+permalink: :year/:month/:day/:title/
+permalink_defaults:
+pretty_urls:
+  trailing_index: true # Set to false to remove trailing index.html from permalinks
+
+# Directory
+source_dir: source
+public_dir: public
+tag_dir: tags
+archive_dir: archives
+category_dir: categories
+code_dir: downloads/code
+i18n_dir: :lang
+skip_render:
+
+# Writing
+new_post_name: :title.md # File name of new posts
+default_layout: post
+titlecase: false # Transform title into titlecase
+external_link:
+  enable: true # Open external links in new tab
+  field: site # Apply to the whole site
+  exclude: ""
+filename_case: 0
+render_drafts: false
+post_asset_folder: false
+relative_link: false
+future: true
+highlight:
+  enable: true
+  line_number: true
+  auto_detect: false
+  tab_replace: ""
+
+# Home page setting
+# path: Root path for your blogs index page. (default = '')
+# per_page: Posts displayed per page. (0 = disable pagination)
+# order_by: Posts order. (Order by date descending by default)
+index_generator:
+  path: ""
+  per_page: 10
+  order_by: -date
+
+# Category & Tag
+default_category: uncategorized
+category_map:
+tag_map:
+
+# Metadata elements
+## https://developer.mozilla.org/en-US/docs/Web/HTML/Element/meta
+meta_generator: true
+
+# Date / Time format
+## Hexo uses Moment.js to parse and display date
+## You can customize the date format as defined in
+## http://momentjs.com/docs/#/displaying/format/
+date_format: YYYY-MM-DD
+time_format: HH:mm:ss
+## Use post's date for updated date unless set in front-matter
+use_date_for_updated: false
+
+# Pagination
+## Set per_page to 0 to disable pagination
+per_page: 10
+pagination_dir: page
+
+# Include / Exclude file(s)
+## include:/exclude: options only apply to the 'source/' folder
+# include:
+# exclude:
+# ignore:
+
+# Extensions
+## Plugins: https://hexo.io/plugins/
+## Themes: https://hexo.io/themes/
+theme: icarus
+
+# theme_config:
+navbar:
+  menu:
+    Home: /
+    Archives: /archives
+    Categories: /categories
+    Tags: /tags
+  links:
+    Github @audacioustux:
+      icon: fab fa-github
+      url: "https://github.com/audacioustux"
+
+footer:
+  links:
+    Creative Commons:
+      icon: fab fa-creative-commons
+      url: "https://creativecommons.org/"
+    Attribution 4.0 International:
+      icon: fab fa-creative-commons-by
+      url: "https://creativecommons.org/licenses/by/4.0/"
+    Source On Github:
+      icon: fab fa-github
+      url: "https://github.com/audacioustux/audacioustux.com"
+
+widgets:
+  - # Widget name
+    type: profile
+    # Where should the widget be placed, left or right
+    position: left
+    # Author name to be shown in the profile widget
+    author: Tanjim Hossain
+    # Title of the author to be shown in the profile widget
+    author_title: Audacious Tux
+    # Author's current location to be shown in the profile widget
+    location: Dhaka, Bangladesh
+    # Path or URL to the avatar to be shown in the profile widget
+    avatar: https://raw.githubusercontent.com/audacioustux/paste/master/7238675.jpg
+    # Whether to show avatar image rounded or square
+    avatar_rounded: true
+    # Path or URL for the follow button
+    follow_link: "https://github.com/audacioustux"
+    # Links to be shown on the bottom of the profile widget
+    social_links:
+      Github:
+        icon: fab fa-github
+        url: "https://github.com/audacioustux"
+      Facebook:
+        icon: fab fa-facebook
+        url: "https://facebook.com/htanjim"
+      Telegram:
+        icon: fab fa-telegram-plane
+        url: "https://t.me/audacioustux"
+  - # Widget name
+    type: toc
+    # Where should the widget be placed, left or right
+    position: left
+  - # Widget name
+    type: links
+    # Where should the widget be placed, left or right
+    position: left
+    # Links to be shown in the links widget
+    links:
+      wiki: "https://wiki.ubuntu.com/tanjim"
+  - # Widget name
+    type: category
+    # Where should the widget be placed, left or right
+    position: left
+  - # Widget name
+    type: tagcloud
+    # Where should the widget be placed, left or right
+    position: left
+  - # Widget name
+    type: recent_posts
+    # Where should the widget be placed, left or right
+    position: right
+  - # Widget name
+    type: archive
+    # Where should the widget be placed, left or right
+    position: right
+  - # Widget name
+    type: tag
+    # Where should the widget be placed, left or right
+    position: right
+
+share:
+  # Share plugin name
+  type: sharethis
+  install_url: //platform-api.sharethis.com/js/sharethis.js#property=5ddb0a8373c71100125a2b94&product=inline-share-buttons
+
+comment:
+  # Name of the comment plugin
+  type: disqus
+  shortname: tanjim-tech
+
+# Deployment
+## Docs: https://hexo.io/docs/deployment.html
+deploy:
+  type: git
+  repo: https://github.com/audacioustux/audacioustux.com
+  # branch: [branch] #published
+  # message: [message] #leave this blank
