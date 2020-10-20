@@ -147,7 +147,7 @@
                 <span class="level-item has-text-grey">
                     
                     
-                    a minute read (About 146 words)
+                    a minute read (About 161 words)
                 </span>
                 
                 
@@ -165,11 +165,11 @@
 <p>the problem: is in the thumbnail</p>
 <p>there might be many solution, but none of them really works all the time. just<br>removing diacritics or combine characters won’t solve the problem. and striping<br>or Modifying user submitted text should have strong reasons. this is not one of<br>them. imagine if Stack overflow sanitized the content of that question, OP would<br>have to submit a screenshot to describe the <strong>thing</strong></p>
 <p>solution:</p>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">display: block; // overflow: hidden won't work otherwise</span><br><span class="line"><span class="selector-tag">overflow</span>: <span class="selector-tag">hidden</span>;</span><br></pre></td></tr></table></figure>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">p</span>, <span class="selector-tag">span</span>, <span class="selector-class">.whatever</span> &#123;</span><br><span class="line">    display: block; // overflow: hidden won't work otherwise</span><br><span class="line">    <span class="selector-tag">overflow</span>: <span class="selector-tag">hidden</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<p>set this for <code>&lt;p&gt;&lt;span&gt;</code> or whatever<br>and set line-height as needed, as much you want to be visible</p>
+<p>set line-height as needed, as much you want to be visible</p>
 <p>and also you may want to set overflow: visible on :hover</p>
-<p>now, let pips do whatever they want.. like using username/handle: ( ͡° ͜ʖ ͡°) </p>
+<p>now, let pips do whatever they want.. like using username/handle: ส็็็็็็็็็็็็็็็็็็็audacioustuxส</p>
 
         </div>
         
