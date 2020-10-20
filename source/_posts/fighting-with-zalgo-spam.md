@@ -26,12 +26,13 @@ have to submit a screenshot to describe the **thing**
 solution:
 
 ```css
-display: block; // overflow: hidden won't work otherwise
-overflow: hidden;
+p, span, .whatever {
+    display: block; // overflow: hidden won't work otherwise
+    overflow: hidden;
+}
 ```
 
-set this for `<p><span>` or whatever
-and set line-height as needed, as much you want to be visible
+set line-height as needed, as much you want to be visible
 
 and also you may want to set overflow: visible on :hover
 
