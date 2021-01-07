@@ -37,7 +37,7 @@ tags:
   - platform support (in browser language support, webassembly, embedded system)
   - C ABI (FFI/NFI)
   - messege passing
-  - concurrency primitive
+  - concurrency primitive; Actor, CSP model
   - general, special purpose, esoteric language
   - lisp style
   - procedural language
