@@ -3,9 +3,7 @@ title: Real world as Actor System
 thumbnail: /img/actor-system.png
 date: 2021-01-08 04:24:50
 categories:
-- beam
-- akka
-- জ্ঞানবার্তা
+- [beam, akka, জ্ঞানবার্তা]
 tags:
 - actor-model
 - explain
