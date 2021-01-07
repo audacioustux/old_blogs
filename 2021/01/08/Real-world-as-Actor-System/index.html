@@ -7,7 +7,7 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
 
-<title>Archives: 2020/2 - Tanjim Hossain</title>
+<title>Real world as Actor System - Tanjim Hossain</title>
 
 
 
@@ -66,7 +66,7 @@
         <div class="navbar-brand is-flex-center">
             <a class="navbar-item navbar-logo" href="/">
             
-                <img src="/images/logo.svg" alt="Tanjim Hossain" height="28">
+                <img src="/images/logo.svg" alt="Real world as Actor System" height="28">
             
             </a>
         </div>
@@ -113,44 +113,128 @@
         <div class="container">
             <div class="columns">
                 <div class="column is-8-tablet is-8-desktop is-6-widescreen has-order-2 column-main">
-
-<div class="card widget">
-    <div class="card-content">
-        <h3 class="tag is-link">
-        February 2020
-        </h3>
-        <div class="timeline">
+<div class="card">
+    
+    <div class="card-image">
+        <span  class="image is-7by1">
+            <img class="thumbnail" src="/img/actor-system.png" alt="Real world as Actor System">
+        </span>
+    </div>
+    
+    <div class="card-content article ">
         
-            <article class="media">
+        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
+            <div class="level-left">
+                <time class="level-item has-text-grey" datetime="2021-01-08T04:24:50.000Z">2021-01-08</time>
                 
-                <a href="/2020/02/12/library-less-node-config-secrets-management/" class="media-left">
-                    <p class="image is-64x64">
-                        <img class="thumbnail" src="/img/Screenshot_20200212_024945.png" alt="library-less node config &amp; secrets management">
-                    </p>
-                </a>
-                
-                <div class="media-content">
-                    <div class="content">
-                        <time class="has-text-grey is-size-7 is-block is-uppercase" datetime="2020-02-12T02:27:53.000Z">2020-02-12</time>
-                        <a href="/2020/02/12/library-less-node-config-secrets-management/" class="title has-link-black-ter is-size-6 has-text-weight-normal">library-less node config &amp; secrets management</a>
-                        <div class="level article-meta is-mobile">
-                            <div class="level-left">
-                                
-                                <div class="level-item is-size-7 is-uppercase">
-                                <a class="has-link-grey -link" href="/categories/nodeJS/">nodeJS</a> / <a class="has-link-grey -link" href="/categories/nodeJS/typescript/">typescript</a>
-                                </div>
-                                
-                            </div>
-                        </div>
-                    </div>
+                <div class="level-item">
+                <a class="has-link-grey -link" href="/categories/beam/">beam</a>&nbsp;/&nbsp;<a class="has-link-grey -link" href="/categories/beam/akka/">akka</a>&nbsp;/&nbsp;<a class="has-link-grey -link" href="/categories/beam/akka/%E0%A6%9C%E0%A7%8D%E0%A6%9E%E0%A6%BE%E0%A6%A8%E0%A6%AC%E0%A6%BE%E0%A6%B0%E0%A7%8D%E0%A6%A4%E0%A6%BE/">জ্ঞানবার্তা</a>
                 </div>
-            </article>
-        
+                
+                
+                <span class="level-item has-text-grey">
+                    
+                    
+                    3 minutes read (About 510 words)
+                </span>
+                
+                
+            </div>
         </div>
+        
+        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
+            
+                Real world as Actor System
+            
+        </h1>
+        <div class="content">
+            <h4 id="One-can-partially-model-the-real-world-in-an-actor-system"><a href="#One-can-partially-model-the-real-world-in-an-actor-system" class="headerlink" title="One can partially model the real-world in an actor system."></a>One can partially model the real-world in an actor system.</h4><p>Like, imagine you, me, everyone and everything are actors…<br>They <strong>act</strong> when they get a message in their <strong>mailbox</strong>…<br>Every actor runs in their process, doing their own business…<br>they mostly do three things in their lifetime, </p>
+<ol>
+<li>listens to messages, </li>
+<li>changes his own view &amp; perspective of the world purely based on the messages received, </li>
+<li>do things that they feel right.<br>They may tell other actors to do something via messages or spawn more children actors and be a responsible parent. Not because they crave for a child, but to delegate their work to them… because the more the actors, the more resources they can utilize…<br>The individual actors have no idea about the real world, and they don’t share any memory… if one dies, no one cares, except their parents…</li>
+</ol>
+<p>Now imagine you are an actor and have a supervisor. Who supervises many other actors just like you;<br>but you are a faulty one. You don’t know how to center a text vertically in CSS. You can do three things at this point:</p>
+<ol>
+<li>Break down, and decide to leave your post,</li>
+<li>Ask a search engine (also an actor) to find resources to learn how to do the task so you can process the message.<br>Optionally, by the time you take to learn the new skill, you could add the task to your mailbox again to do that in the future and keep doing other tasks.<br>But that means you can reach a point when you’re in a livelock [1] situation… what if the search engine failed to find any resource? You’re continuously reminding yourself about the task, not having enough sleep, and disrupting others needlessly… why not just leave your post?</li>
+<li>Politely ask your supervisor by sending a message to terminate himself [0]</li>
+</ol>
+<p>In computation, spawning each of these actors takes nanoseconds and takes less than a KB of memory. Millions of actors get scheduled on an arbitrary number of physical CPU cores. You can create a strong hierarchy out of this. You have full control of how they would behave, their traits before they are even born out of that specification.<br>Individually they have no significance. </p>
+<ul>
+<li>Actors can migrate one node to another, </li>
+<li>shout and listen to events/messages, </li>
+<li>spawn as many children they want, </li>
+<li>terminate them if they fail on their purpose and replace them with new ones in a matter of nanoseconds, </li>
+<li>even self terminate and clean out any footprint has left, with no moral obligations.</li>
+</ul>
+<p>Real-world is chaotic because we want to survive. Our mind is locked and protected by our aggressive behavior. We don’t have an agreed protocol to communicate, a common goal to achieve, a messed up hierarchy, reluctant to gracefully migrate to a different place, and damn.! ain’t we have too many globals to deal with? not a single source of truth.., no CRDT… oopsie 🙃</p>
+<p>[0]: don’t in real life<br>[1]: a condition in which two or more threads while not blocked cannot make further progress</p>
+
+        </div>
+        
+        <div class="level is-size-7 is-uppercase">
+            <div class="level-start">
+                <div class="level-item">
+                    <span class="is-size-6 has-text-grey has-mr-7">#</span>
+                    <a class="has-link-grey -link" href="/tags/actor-model/" rel="tag">actor-model</a>, <a class="has-link-grey -link" href="/tags/explain/" rel="tag">explain</a>
+                </div>
+            </div>
+        </div>
+        
+        
+        
+        
+<div class="sharethis-inline-share-buttons"></div>
+<script type='text/javascript' src='//platform-api.sharethis.com/js/sharethis.js#property=5ddb0a8373c71100125a2b94&amp;product=inline-share-buttons' async='async'></script>
+
+        
     </div>
 </div>
 
 
+
+
+
+<div class="card card-transparent">
+    <div class="level post-navigation is-flex-wrap is-mobile">
+        
+        
+        <div class="level-end">
+            <a class="level level-item has-link-grey  article-nav-next" href="/2020/10/20/fighting-with-zalgo-spam/">
+                <span class="level-item">fighting with zalgo spam</span>
+                <i class="level-item fas fa-chevron-right"></i>
+            </a>
+        </div>
+        
+    </div>
+</div>
+
+
+
+<div class="card">
+    <div class="card-content">
+        <h3 class="title is-5 has-text-weight-normal">Comments</h3>
+        
+<script>
+    var disqus_config = function () {
+        this.page.url = 'http://audacioustux.com/2021/01/08/Real-world-as-Actor-System/';
+        this.page.identifier = '2021/01/08/Real-world-as-Actor-System/';
+    };
+    (function() {
+        var d = document, s = d.createElement('script');  
+        s.src = '//' + 'tanjim-tech' + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+
+<div id="disqus_thread">
+    
+    <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+    </div>
+</div>
 </div>
                 
 
@@ -1148,7 +1232,7 @@
             <div class="level-start has-text-centered-mobile">
                 <a class="footer-logo is-block has-mb-6" href="/">
                 
-                    <img src="/images/logo.svg" alt="Tanjim Hossain" height="28">
+                    <img src="/images/logo.svg" alt="Real world as Actor System" height="28">
                 
                 </a>
                 <p class="is-size-7">
